@@ -1,10 +1,10 @@
 # PM Evaluation Framework
 
-A working library of frameworks, rubrics, and Claude skills for thinking like a Product Manager.
+A working library of frameworks, templates, rubrics, and Claude skills for product managers — across the full lifecycle, from framing a problem to launching, measuring, and reviewing the result.
 
-The material is organized around one question: **what does a good PM actually do, and how do we know?**
+The material is organized around one question: **what does a good PM actually do at each stage of the work, and how do we know?**
 
-It pulls together decision frameworks, evaluation rubrics, and reusable templates that hold up under cold-call pressure on hard product decisions: when to kill a feature, how to read user research that contradicts your strategy, what "MVP" really means, how to run a launch when failure is likely.
+It pulls together decision frameworks, PRD and launch templates, evaluation rubrics, and Claude skills that hold up under exec-review pressure on hard product decisions: when to kill a feature, how to read user research that contradicts your strategy, what "MVP" really means, what readiness actually means before a launch, and which metrics tell you whether the strategy is working vs. whether the product is being used.
 
 ---
 
@@ -31,16 +31,19 @@ It pulls together decision frameworks, evaluation rubrics, and reusable template
 
 ## Claude skills
 
-The repo ships with four [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate.
+The repo ships with seven [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
-| Skill | What it does |
-|---|---|
-| [`pm-framework-selector`](.claude/skills/pm-framework-selector/SKILL.md) | Given a decision context, recommends which framework(s) to apply and why |
-| [`pm-decision-coach`](.claude/skills/pm-decision-coach/SKILL.md) | Walks you through any product decision using the framing → research → prioritization → risk loop |
-| [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | Grades a PM's written analysis or recommendation against the evaluation rubric |
-| [`pm-case-discussion`](.claude/skills/pm-case-discussion/SKILL.md) | Runs a cold-call style case discussion: asks you the hard questions, pushes back, and surfaces what you missed |
+| Stage | Skill | Use when |
+|---|---|---|
+| **Frame** | [`pm-framework-selector`](.claude/skills/pm-framework-selector/SKILL.md) | You have a decision in front of you and don't know which framework to reach for |
+| **Frame / decide** | [`pm-decision-coach`](.claude/skills/pm-decision-coach/SKILL.md) | You want to be walked through a decision: framing → research → prioritization → risk |
+| **Build** | [`pm-prd-drafter`](.claude/skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
+| **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
+| **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
+| **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
+| **Practice** | [`pm-case-discussion`](.claude/skills/pm-case-discussion/SKILL.md) | You want a cold-call case discussion that pushes back and surfaces what you missed |
 
-To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically.
+To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
 
 ---
 
