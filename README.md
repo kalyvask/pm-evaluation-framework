@@ -8,6 +8,33 @@ It pulls together decision frameworks, PRD and launch templates, evaluation rubr
 
 ---
 
+## Personalize this for your own use
+
+If you forked or cloned this repo, do these steps in order. Each one is concrete — you should be able to copy-paste and run.
+
+1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
+
+2. **Install the Claude skills so they work in every project, not just this repo.** The seven skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+   ```bash
+   mkdir -p ~/.claude/skills
+   cp -r .claude/skills/* ~/.claude/skills/
+   ```
+   Restart Claude Code. Run `/skills` to confirm the seven `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+
+3. **Add your own case patterns.** Drop new files into [`case-patterns/`](case-patterns/) as Markdown. Use any existing file (e.g. [`case-patterns/refactor-vs-rebuild.md`](case-patterns/refactor-vs-rebuild.md)) as a structural template — keep the four sections: **Setup → What worked / what failed → Lessons → When to recognize this pattern**. Anonymize company, team, and product names. Update [`case-patterns/README.md`](case-patterns/README.md) to list your additions.
+
+4. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
+
+5. **Customize rubric weights and criteria for your team's bar.** The three rubrics in [`rubrics/`](rubrics/) — [`pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md), [`strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md), [`product-review-rubric.md`](rubrics/product-review-rubric.md) — are deliberately editable. Re-weight criteria, add team-specific ones (e.g. "addresses regulated-data path"), or replace the five top-level questions in the [The five evaluation criteria](#the-five-evaluation-criteria) section below. The skills cite these files by path, so they pick up your edits automatically.
+
+6. **Extend or override skills with your own voice and style.** To add a new skill: copy [`SKILL.md.tmpl`](SKILL.md.tmpl) into a new folder under `.claude/skills/<your-skill>/SKILL.md` and fill in the front-matter description (this is what Claude pattern-matches against). To change the voice of an existing skill: edit its `SKILL.md` directly — tighten the prose, add your own anti-patterns, or point it at frameworks/case patterns you added in steps 3–4.
+
+7. **Keep your private material local — it's already gitignored.** [`.gitignore`](.gitignore) already excludes `drafts/`, `local/`, `private/`, `outputs/`, `.cache/`, `*.draft.md`, `*.local.md`, CVs, PDFs, DOCX, and `.env*`. Use these for unredacted case notes, in-flight memo drafts, your CV, and any private artifact you want a skill to reason over without committing it. Sanity-check with `git status` before every commit.
+
+8. **Smoke-test that personalization worked.** From inside Claude Code, ask: *"Use the pm-evaluator skill to grade this draft memo: [paste]"* — confirm the skill triggers and cites your edited rubric. Then add a one-line case to `case-patterns/` and ask: *"Use pm-framework-selector for [your situation]"* — confirm the skill surfaces your new pattern.
+
+---
+
 ## How to use this repo
 
 | If you want to... | Start here |
@@ -44,20 +71,6 @@ The repo ships with seven [Claude Code skills](https://docs.claude.com/en/docs/c
 | **Practice** | [`pm-case-discussion`](.claude/skills/pm-case-discussion/SKILL.md) | You want a cold-call case discussion that pushes back and surfaces what you missed |
 
 To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
-
----
-
-## Configure for your own use
-
-The frameworks, templates, and rubrics are meant to be reused as-is. The case patterns in [`case-patterns/`](case-patterns/) are deliberately anonymized so you can map them onto your own situations.
-
-To make the repo yours:
-
-1. Fork it. Edit [`LICENSE`](LICENSE) to your name, and update this README to reflect your perspective.
-2. Add your own anonymized cases to [`case-patterns/`](case-patterns/) using the existing files as a structural template (Setup → What worked → Lessons → When to recognize this pattern).
-3. Tune the [`rubrics/`](rubrics/) to your team's bar — the five-criterion rubric is a starting point, not a fixed standard.
-4. Extend the Claude skills under `.claude/skills/` by copying [`SKILL.md.tmpl`](SKILL.md.tmpl) and pointing the new skill at your additions.
-5. Keep `.env`, local notes, and unredacted case material out of the repo — they're already gitignored.
 
 ---
 
