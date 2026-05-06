@@ -9,3 +9,17 @@ __pycache__/
 node_modules/
 .env
 .env.local
+.env.*
+
+# Local-only adopter content (don't accidentally commit personal cases, drafts, or CVs)
+.cache/
+outputs/
+drafts/
+local/
+private/
+*.draft.md
+*.local.md
+resume.*
+cv.*
+*.pdf
+*.docx

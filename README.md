@@ -47,6 +47,20 @@ To use them locally, drop the repo in a directory Claude Code can see — the sk
 
 ---
 
+## Configure for your own use
+
+The frameworks, templates, and rubrics are meant to be reused as-is. The case patterns in [`case-patterns/`](case-patterns/) are deliberately anonymized so you can map them onto your own situations.
+
+To make the repo yours:
+
+1. Fork it. Edit [`LICENSE`](LICENSE) to your name, and update this README to reflect your perspective.
+2. Add your own anonymized cases to [`case-patterns/`](case-patterns/) using the existing files as a structural template (Setup → What worked → Lessons → When to recognize this pattern).
+3. Tune the [`rubrics/`](rubrics/) to your team's bar — the five-criterion rubric is a starting point, not a fixed standard.
+4. Extend the Claude skills under `.claude/skills/` by copying [`SKILL.md.tmpl`](SKILL.md.tmpl) and pointing the new skill at your additions.
+5. Keep `.env`, local notes, and unredacted case material out of the repo — they're already gitignored.
+
+---
+
 ## The five evaluation criteria
 
 Every framework in this repo ladders up to five questions that travel with you across any product decision:
