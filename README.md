@@ -1,10 +1,14 @@
 # PM Evaluation Framework
 
-A working library of frameworks, templates, rubrics, and Claude skills for product managers — across the full lifecycle, from framing a problem to launching, measuring, and reviewing the result.
+A working library of frameworks, templates, rubrics, and Claude skills for product managers. Built around the artifacts that actually go up the chain: strategy memos, PRDs, launch checklists, metrics dashboards, kill / continue decisions. Not for case-interview prep.
 
-The material is organized around one question: **what does a good PM actually do at each stage of the work, and how do we know?**
+The material covers the full lifecycle, from framing a problem and running customer discovery through launch readiness and post-launch metrics. Two design choices distinguish it from a generic PM checklist library.
 
-It pulls together decision frameworks, PRD and launch templates, evaluation rubrics, and Claude skills that hold up under exec-review pressure on hard product decisions: when to kill a feature, how to read user research that contradicts your strategy, what "MVP" really means, what readiness actually means before a launch, and which metrics tell you whether the strategy is working vs. whether the product is being used.
+**Discovery is treated as technique, not philosophy.** The repo includes a Mom-Test customer-interview coach (with the rules behind why "would you use this?" produces fluff and "when's the last time that happened?" produces signal), a Lean-Startup-grounded value-hypothesis stress-tester, and substantive framework docs underneath each. The principles are tactical: what to ask, what to ignore, what counts as evidence.
+
+**Every primary skill chains into an adversarial second pass.** The [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill takes the output of any other skill (or any external AI critique, or your own draft) and re-reviews it under a different lens. Most artifacts that "look fine" do so because the first reviewer applied the comfortable lens. The second pass picks a different one. The point matches a working principle from my chief-of-staff setup: critically evaluate AI output, don't defer to it.
+
+The repo organizes around one question: **what does a good PM actually do at each stage of the work, and how do we know?** The [five evaluation criteria](#the-five-evaluation-criteria) below answer it. Everything else (frameworks, decision-making docs, cross-functional traps, rubrics, templates, skills) feeds those five.
 
 ---
 
