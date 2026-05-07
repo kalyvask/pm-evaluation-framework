@@ -140,6 +140,21 @@ The framework is a forcing function for clarity. It is not a tiebreaker. If two 
 
 ---
 
+## Concentration after signal
+
+Most teams over-spread their bets *after* signal has emerged. They keep funding the things that aren't working "in case they turn around" and under-fund the thing that is working "because it might be a fluke."
+
+The right move is the opposite: **once a bet shows real signal, concentrate aggressively.** The cost of slightly under-funding a winner is large (you give up compounding upside); the cost of slightly over-funding a fluke is small (you find out and stop).
+
+This applies in two common situations:
+
+- **A portfolio of experiments where one starts working.** A team running several parallel bets should expect most to die. When one shows real signal, the question is not "should we keep the others alive?" but "how fast can we shift resources?" Killed teams move to the next bet within 2–4 weeks; the discipline is in moving them.
+- **A roadmap where one feature is unexpectedly hot.** When usage data shows one of the shipped features pulling away, the temptation is to keep ratio'ing investment across the rest of the roadmap. The right move is usually to drop a weaker bet and double down on what's actually compounding.
+
+The discipline is hardest when it's politically costly — when the bets being de-funded belong to people who advocated for them. Pre-committed concentration rules ("if any experiment hits X by Y, we move N% of capacity onto it") make the call easier later.
+
+---
+
 ## Ranking rare-but-strategic against frequent-but-tactical
 
 Frameworks like RICE systematically under-weight strategic bets, because:

@@ -14,24 +14,22 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The nine skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The eight skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the nine `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the eight `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
-3. **Add your own case patterns.** Drop new files into [`case-patterns/`](case-patterns/) as Markdown. Use any existing file (e.g. [`case-patterns/refactor-vs-rebuild.md`](case-patterns/refactor-vs-rebuild.md)) as a structural template — keep the four sections: **Setup → What worked / what failed → Lessons → When to recognize this pattern**. Anonymize company, team, and product names. Update [`case-patterns/README.md`](case-patterns/README.md) to list your additions.
+3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
-4. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
+4. **Customize rubric weights and criteria for your team's bar.** The three rubrics in [`rubrics/`](rubrics/) — [`pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md), [`strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md), [`product-review-rubric.md`](rubrics/product-review-rubric.md) — are deliberately editable. Re-weight criteria, add team-specific ones (e.g. "addresses regulated-data path"), or replace the five top-level questions in the [The five evaluation criteria](#the-five-evaluation-criteria) section below. The skills cite these files by path, so they pick up your edits automatically.
 
-5. **Customize rubric weights and criteria for your team's bar.** The three rubrics in [`rubrics/`](rubrics/) — [`pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md), [`strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md), [`product-review-rubric.md`](rubrics/product-review-rubric.md) — are deliberately editable. Re-weight criteria, add team-specific ones (e.g. "addresses regulated-data path"), or replace the five top-level questions in the [The five evaluation criteria](#the-five-evaluation-criteria) section below. The skills cite these files by path, so they pick up your edits automatically.
+5. **Extend or override skills with your own voice and style.** To add a new skill: copy [`SKILL.md.tmpl`](SKILL.md.tmpl) into a new folder under `.claude/skills/<your-skill>/SKILL.md` and fill in the front-matter description (this is what Claude pattern-matches against). To change the voice of an existing skill: edit its `SKILL.md` directly — tighten the prose, add your own anti-patterns, or point it at frameworks you added in steps above.
 
-6. **Extend or override skills with your own voice and style.** To add a new skill: copy [`SKILL.md.tmpl`](SKILL.md.tmpl) into a new folder under `.claude/skills/<your-skill>/SKILL.md` and fill in the front-matter description (this is what Claude pattern-matches against). To change the voice of an existing skill: edit its `SKILL.md` directly — tighten the prose, add your own anti-patterns, or point it at frameworks/case patterns you added in steps 3–4.
+6. **Keep your private material local — it's already gitignored.** [`.gitignore`](.gitignore) already excludes `drafts/`, `local/`, `private/`, `outputs/`, `.cache/`, `*.draft.md`, `*.local.md`, CVs, PDFs, DOCX, and `.env*`. Use these for unredacted notes, in-flight memo drafts, your CV, and any private artifact you want a skill to reason over without committing it. Sanity-check with `git status` before every commit.
 
-7. **Keep your private material local — it's already gitignored.** [`.gitignore`](.gitignore) already excludes `drafts/`, `local/`, `private/`, `outputs/`, `.cache/`, `*.draft.md`, `*.local.md`, CVs, PDFs, DOCX, and `.env*`. Use these for unredacted case notes, in-flight memo drafts, your CV, and any private artifact you want a skill to reason over without committing it. Sanity-check with `git status` before every commit.
-
-8. **Smoke-test that personalization worked.** From inside Claude Code, ask: *"Use the pm-evaluator skill to grade this draft memo: [paste]"* — confirm the skill triggers and cites your edited rubric. Then add a one-line case to `case-patterns/` and ask: *"Use pm-framework-selector for [your situation]"* — confirm the skill surfaces your new pattern.
+7. **Smoke-test that personalization worked.** From inside Claude Code, ask: *"Use the pm-evaluator skill to grade this draft memo: [paste]"* — confirm the skill triggers and cites your edited rubric. Then ask: *"Use pm-framework-selector for [your situation]"* — confirm the skill routes you to the right framework.
 
 ---
 
@@ -50,7 +48,6 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
 | Run a launch where some failure is expected | [`cross-functional/failure-management.md`](cross-functional/failure-management.md) |
 | Understand how AI is changing the PM role | [`ai-and-pm.md`](ai-and-pm.md) |
-| See recurring product-decision patterns (anonymized) | [`case-patterns/`](case-patterns/) |
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |
@@ -60,7 +57,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## Claude skills
 
-The repo ships with nine [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with eight [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
 | Stage | Skill | Use when |
 |---|---|---|
@@ -72,7 +69,6 @@ The repo ships with nine [Claude Code skills](https://docs.claude.com/en/docs/cl
 | **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
 | **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
 | **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
-| **Practice** | [`pm-case-discussion`](.claude/skills/pm-case-discussion/SKILL.md) | You want a cold-call case discussion that pushes back and surfaces what you missed |
 
 To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
 

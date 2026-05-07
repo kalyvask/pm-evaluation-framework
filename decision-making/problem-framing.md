@@ -85,8 +85,6 @@ When this happens, the team usually optimized for **friction** when the actual c
 
 The fix: when adoption fails despite good research, ask not "what feature is missing?" but "what does adopting this product cost the user, and what do they get?" Sometimes the product asks the user to give up something (audience, subscriber base, autonomy, status) that no amount of feature polish will compensate for.
 
-(See `case-patterns/wrong-bottleneck.md` for the canonical example, anonymized.)
-
 ---
 
 ## Problem vs. opportunity

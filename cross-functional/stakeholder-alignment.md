@@ -48,8 +48,6 @@ Both are sometimes right. The wrong move is *picking one without thinking two st
 
 The right move is usually a *combination*: a small, time-boxed Option A to maintain momentum, with a credible commitment to Option B that engineering and leadership both believe.
 
-(See `case-patterns/refactor-vs-rebuild.md` for the canonical example, anonymized.)
-
 ---
 
 ## Leadership credibility is a precondition, not an outcome

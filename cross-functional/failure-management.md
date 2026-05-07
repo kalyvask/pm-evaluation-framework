@@ -55,8 +55,6 @@ The signals that you're in this category:
 
 Recovery is harder than from execution failure, because you can't fix it by trying again on the same plan. You have to re-diagnose, which often means revisiting strategic assumptions you'd considered settled.
 
-(See `case-patterns/wrong-bottleneck.md` for the canonical example, anonymized.)
-
 ---
 
 ## Move failed teams quickly

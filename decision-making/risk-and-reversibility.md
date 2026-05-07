@@ -32,6 +32,18 @@ Two product domains where almost every decision is one-way-ish:
 
 In both, the upfront rigor bar should be much higher than for software. Spend the prototype/research time before you commit.
 
+### Test-context fidelity
+
+A more general version of the hardware-mockup point: **your test environment must match your deployment environment along the dimensions that matter.**
+
+Things that look fine in static testing can be ambiguous in motion. Things that read clearly in a lab can be inaudible in road noise. Things that work in a demo dataset can degrade on real production data. Things that work for one user at a time can collapse under concurrent load. Things that one engineer reproduces in dev can fail in the customer's actual VPC.
+
+The trap is that **stakeholder reviews on low-fidelity artifacts feel rigorous** — lots of people see the design, lots of people approve it. But everyone is reviewing the same low-fidelity artifact, so the context blindspot is structural. The rigor is in *contextual fidelity*, not in *number of reviewers.*
+
+Three reviewers in real conditions beat thirty in a conference room.
+
+When the deployment context involves motion, sound, distraction, regulated data, real load, or environmental variability that the test context doesn't reproduce, the testing is necessary but not sufficient. Plan a higher-fidelity round before commit.
+
 ---
 
 ## Pre-mortem

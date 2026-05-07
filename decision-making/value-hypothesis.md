@@ -148,7 +148,7 @@ You've validated the value hypothesis when:
 What does **not** prove PMF:
 - Survey-based metrics (NPS, "would you be very disappointed?") — useful as directional, but **intent-based, not behavior-based.** People say nice things they don't act on.
 - Free adoption — see `frameworks/03-pre-pmf-validation.md`.
-- Strong NPS without a viable economic model — see `case-patterns/pmf-without-business-fit.md`.
+- Strong NPS without a viable economic model — measuring user love and confusing it with viability.
 - Vanity totals (DAU up, signups up) without segment-level retention.
 
 Rule of thumb: *behavior-based metrics beat intent-based ones every time.* A user who keeps coming back beats a user who said they would.
@@ -181,6 +181,27 @@ Before pouring growth dollars into a product, you should be able to answer these
 7. **What's the kill criterion?** If validation fails, do you pivot the who or restart on the what? Pre-decide.
 
 If you can't answer all seven — especially 4 through 7 — you don't have a value hypothesis. You have an idea you like.
+
+---
+
+## The inclusion vs. control tension
+
+In many regulated and risk-sensitive categories — fintech, healthcare, education, insurance — there's a structural tension worth naming explicitly:
+
+> The users who need the product most are often the hardest to underwrite, qualify, or serve safely. Tightening eligibility reduces risk and makes the unit economics work. It also excludes the strategically necessary segment.
+
+This shows up as a fork between two paths, neither clean:
+
+- **Tighten eligibility.** Loss rates fall, partner banks / regulators / insurers stay happy, the product scales. But the people you originally wanted to help are the ones being filtered out, and the brand promise drifts.
+- **Keep eligibility broad.** The brand promise stays intact, the impact story stays real. But losses, complaints, regulatory exposure, or partner pushback eventually constrain growth.
+
+Often there is no single design that solves both. The PM's job in these cases is **not to pretend there's a clean technical fix.** It's to surface the tension explicitly to leadership, with three things on the table: the segment that can be served sustainably, the segment that cannot, and the strategic cost of the choice. Leadership decides; the PM frames.
+
+A useful re-statement when the tension shows up:
+
+> The question is not *"is the product good?"* — it's *"is the product good for the subset of users we can sustainably serve, under what eligibility model, at what price, under what regulatory classification?"*
+
+That re-framing converts a fuzzy "PMF unclear" debate into a specific set of choices, each with a different sustainable-segment definition.
 
 ---
 

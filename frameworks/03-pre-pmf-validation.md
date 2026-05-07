@@ -80,7 +80,7 @@ PMF requires evidence on all three. Strong acquisition with collapsing retention
 Three things that are easy to confuse:
 
 - **Free adoption ≠ PMF.** People will try anything that's free. PMF requires evidence that people would *pay*, *renew*, or *switch from an existing solution*.
-- **Strong NPS ≠ PMF.** A product can have unusually high NPS and still fail to find a sustainable economic model. NPS measures love, not viability. (See `case-patterns/pmf-without-business-fit.md` for the canonical example.)
+- **Strong NPS ≠ PMF.** A product can have unusually high NPS and still fail to find a sustainable economic model. NPS measures love, not viability. See `decision-making/value-hypothesis.md` § "The inclusion vs. control tension" for the version of this that shows up in regulated categories.
 - **Usage ≠ PMF.** Free trials, internal employee usage, and "I tried it once" all count as usage. PMF requires retained, growing, willing-to-pay usage from your ICP.
 
 The hardest question in this phase is honest: *would users still use this if it cost what it should cost to run?*

@@ -40,6 +40,7 @@ This skill helps a PM (or someone helping a PM) pick the right framework for the
 
 For decisions that don't fit a phase cleanly (problem framing, research methods, cross-functional disputes), look in `decision-making/` and `cross-functional/`:
 
+
 | Question | File |
 |---|---|
 | Am I solving the right problem? | `decision-making/problem-framing.md` |
