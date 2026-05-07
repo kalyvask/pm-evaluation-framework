@@ -87,3 +87,7 @@ For a **critique**, use:
 - Writing the solution as a feature list. Re-write into user-outcome language even if it's awkward at first.
 - Skipping the bundle/journey check because the PRD is "just a feature." Most PRD failures live in the procurement/admin/downstream sections that weren't written.
 - Critiquing 15 minor issues. Surface the 2–3 that, if fixed, would make the PRD substantially stronger.
+
+## Chain with pm-red-team
+
+Before circulating a PRD that's heading into a launch decision or a build commitment, run the output of this skill through [`pm-red-team`](../pm-red-team/SKILL.md). This skill stress-tests the PRD on its own terms; the red-team pass applies a different lens (stakeholder, viability, execution, or counter-recommendation) and is built to challenge rather than defer. Especially worth chaining when the team is unanimous — agreement is when blind spots are most likely.

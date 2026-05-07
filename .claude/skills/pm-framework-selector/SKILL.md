@@ -48,6 +48,7 @@ For decisions that don't fit a phase cleanly (problem framing, research methods,
 | How to run a customer-discovery interview that actually produces signal | `decision-making/customer-interviews.md` |
 | What's the underlying value-hypothesis bet, and how do I test it? | `decision-making/value-hypothesis.md` |
 | Is this product actually defensible, and against which competitor move? | `decision-making/competitive-moat.md` |
+| I have an existing critique or recommendation and want it adversarially re-reviewed | Use the `pm-red-team` skill — applies a different lens than the first pass and is built to challenge rather than defer |
 | One-way vs. two-way doors, pre-mortem | `decision-making/risk-and-reversibility.md` |
 | Backlog prioritization | `decision-making/prioritization.md` |
 | What to measure | `decision-making/metrics.md` |

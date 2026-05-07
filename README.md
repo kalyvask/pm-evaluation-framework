@@ -14,12 +14,12 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The eight skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The nine skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the eight `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the nine `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
 3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`decision-log.md`](templates/decision-log.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
@@ -44,6 +44,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
 | Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
+| Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
 | Define what to measure | [`decision-making/metrics.md`](decision-making/metrics.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
@@ -58,7 +59,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## Claude skills
 
-The repo ships with eight [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with nine [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
 | Stage | Skill | Use when |
 |---|---|---|
@@ -70,6 +71,7 @@ The repo ships with eight [Claude Code skills](https://docs.claude.com/en/docs/c
 | **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
 | **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
 | **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
+| **Challenge** | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) | You have an existing critique (from another skill, an external AI, or yourself) and want it adversarially re-reviewed before you act on it |
 
 To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
 

@@ -107,3 +107,7 @@ When invoked on a real decision, respond in this shape:
 - Recommending five frameworks instead of applying one or two
 - Avoiding a clear recommendation because "it depends"
 - Ignoring kill criteria — most PM decisions are quietly broken at this layer
+
+## Chain with pm-red-team
+
+For one-way-door decisions or any decision the user is about to commit to publicly, run the recommendation through [`pm-red-team`](../pm-red-team/SKILL.md) before acting. The coach reaches a position; the red-team challenges it. This is especially useful when the user came in already leaning toward an option — the agreement is the warning sign.

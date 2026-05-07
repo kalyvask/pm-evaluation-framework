@@ -102,3 +102,7 @@ For live product review participation: `rubrics/product-review-rubric.md`.
 - Generic feedback ("good analysis, could be tightened")
 - Listing 15 minor issues instead of the 2–3 that matter most
 - Failing to identify the *one* missing thing that would most improve the artifact
+
+## Chain with pm-red-team
+
+For artifacts heading into a real exec review, fundraise, or board meeting, run the output of this skill through [`pm-red-team`](../pm-red-team/SKILL.md) before acting on it. This skill applies the rubric; `pm-red-team` applies a different lens (stakeholder, viability, execution, or counter-recommendation) to surface what the rubric pass missed. Two passes catch what one doesn't.
