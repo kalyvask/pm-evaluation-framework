@@ -14,12 +14,12 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The seven skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The nine skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the seven `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the nine `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
 3. **Add your own case patterns.** Drop new files into [`case-patterns/`](case-patterns/) as Markdown. Use any existing file (e.g. [`case-patterns/refactor-vs-rebuild.md`](case-patterns/refactor-vs-rebuild.md)) as a structural template — keep the four sections: **Setup → What worked / what failed → Lessons → When to recognize this pattern**. Anonymize company, team, and product names. Update [`case-patterns/README.md`](case-patterns/README.md) to list your additions.
 
@@ -43,6 +43,8 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Sharpen how you frame a problem before jumping to solutions | [`decision-making/problem-framing.md`](decision-making/problem-framing.md) |
 | Think clearly about reversibility before committing | [`decision-making/risk-and-reversibility.md`](decision-making/risk-and-reversibility.md) |
 | Decide between user research methods (personas vs. JTBD vs. Kano) | [`decision-making/research-methods.md`](decision-making/research-methods.md) |
+| Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
+| Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
 | Define what to measure | [`decision-making/metrics.md`](decision-making/metrics.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
@@ -58,12 +60,14 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## Claude skills
 
-The repo ships with seven [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with nine [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
 | Stage | Skill | Use when |
 |---|---|---|
 | **Frame** | [`pm-framework-selector`](.claude/skills/pm-framework-selector/SKILL.md) | You have a decision in front of you and don't know which framework to reach for |
 | **Frame / decide** | [`pm-decision-coach`](.claude/skills/pm-decision-coach/SKILL.md) | You want to be walked through a decision: framing → research → prioritization → risk |
+| **Discover** | [`pm-customer-interview-coach`](.claude/skills/pm-customer-interview-coach/SKILL.md) | You're prepping or debriefing customer interviews and want them stress-tested against the Mom Test rules |
+| **Discover** | [`pm-value-hypothesis-tester`](.claude/skills/pm-value-hypothesis-tester/SKILL.md) | You're about to launch, fundraise, or scale, and you want the underlying what / who / how bet pressure-tested |
 | **Build** | [`pm-prd-drafter`](.claude/skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
 | **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
 | **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |

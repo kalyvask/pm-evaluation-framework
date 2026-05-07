@@ -25,9 +25,11 @@ This skill helps a PM (or someone helping a PM) pick the right framework for the
 | What to ship in V1 | Defining the MVP | JTBD Ranking, MoSCoW, Cupcake Model |
 | Which features are basics / performance / delighters | Defining the MVP | Kano Model |
 | End-to-end thin-slice scoping | Defining the MVP | Story Mapping |
+| Whether the underlying value-hypothesis bet (what / who / how) holds together | Pre-PMF Validation | Rachleff value hypothesis, Christensen disruption, bowling-pin / chasm — see `decision-making/value-hypothesis.md` |
 | Whether we have PMF | Pre-PMF Validation | "10 Happy Users", Sean Ellis Test, Smile Curve, ARC |
 | Activation / TTV health | Pre-PMF Validation | Activation Rate / TTV |
 | Whether GTM is actually ready | Pre-PMF Validation | GTM Strategy Checklist |
+| How to actually run a customer-discovery interview without collecting false positives | Strategy & Discovery / Pre-PMF | Mom Test rules — see `decision-making/customer-interviews.md` |
 | Funnel diagnostics post-PMF | Post-PMF Growth | AARRR (Pirate Metrics) |
 | Feature-level UX measurement | Post-PMF Growth | HEART |
 | Retention diagnosis | Post-PMF Growth | Cohort Retention, Growth Accounting |
@@ -42,6 +44,8 @@ For decisions that don't fit a phase cleanly (problem framing, research methods,
 |---|---|
 | Am I solving the right problem? | `decision-making/problem-framing.md` |
 | Personas vs. JTBD vs. Kano | `decision-making/research-methods.md` |
+| How to run a customer-discovery interview that actually produces signal | `decision-making/customer-interviews.md` |
+| What's the underlying value-hypothesis bet, and how do I test it? | `decision-making/value-hypothesis.md` |
 | One-way vs. two-way doors, pre-mortem | `decision-making/risk-and-reversibility.md` |
 | Backlog prioritization | `decision-making/prioritization.md` |
 | What to measure | `decision-making/metrics.md` |

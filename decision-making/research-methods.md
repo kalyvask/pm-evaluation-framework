@@ -2,6 +2,8 @@
 
 Personas, JTBD, Kano — when to use each, and how not to misuse them.
 
+> Method *selection* is in this file. *How to actually run* a customer-discovery interview without collecting false positives is in [`customer-interviews.md`](customer-interviews.md). The two are complementary: this file picks the instrument; that file teaches you to wield it.
+
 ---
 
 ## Personas vs. Jobs-to-be-Done
