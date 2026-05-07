@@ -164,6 +164,55 @@ This forces explicit pre-commitment, which is the antidote to retroactive ration
 
 ---
 
+## Reading experiment results
+
+A/B test results lie more often than people realize. Three failure modes show up repeatedly:
+
+### 1. The aggregate is masking a segment-level disaster
+
+A test ships, the headline metric moves +1.2%, the team declares a win. Six months later, retention among the strategically important segment is down. The aggregate hid it.
+
+Default move: **before declaring a winner, slice by the strategically necessary segment.** If the test won in aggregate but lost (or didn't move) in the segment your strategy depends on, you don't have a winner. You have a tradeoff that needs a decision, not a deploy.
+
+### 2. The result is real but the effect is too small to matter
+
+A test runs, the variant beats control by +0.4% on a metric, the change is statistically significant, the team ships. Six months of similar +0.4% wins later, the product has 12 changes none of which matter individually and that collectively don't move the strategy.
+
+Default move: **decide the minimum detectable effect that would justify shipping *before* you start the test.** "Stat sig" is necessary, not sufficient. A 0.4% lift on a non-strategic metric is noise dressed up as signal.
+
+### 3. The novelty effect or the cohort effect
+
+The variant looks great in week one, fades by week four. The team shipped in week two. Or: the test ran during an unusual cohort window (post-launch, holiday season, a marketing push) and won't replicate in steady state.
+
+Default move: **run experiments long enough to see beyond the novelty window** (usually 2–4 weeks for habit-forming products), and validate that the cohort during the test reflects steady-state acquisition, not a temporary surge.
+
+### Stress-tests for any experiment result
+
+Before locking a launch decision on test data:
+
+- **Did the test isolate the change you care about?** Or are there confounded variations (timing, marketing, other releases)?
+- **Did the variant win on the strategic metric, or only on a proxy that's easier to move?**
+- **Did the win replicate in the strategic segment, or only in aggregate?**
+- **Is the lift large enough to matter on the strategy timeline, or is it a precision-engineered 0.4%?**
+- **Was the test long enough to clear the novelty window?**
+- **Are guardrail metrics (quality, support load, retention, costs) holding?**
+
+Tests that pass these stress-tests are usable as launch decisions. Tests that don't are interesting; they're not yet decisional.
+
+### Cohort comparisons in observational data
+
+Experiments are the gold standard. When you can't run one — and many B2B and infrequent-event products genuinely can't — cohort comparisons are the next best, but they're easy to get wrong.
+
+Three traps:
+
+- **Self-selection.** Users who adopted feature X are systematically different from users who didn't. Comparing their retention is comparing two non-equivalent populations, not measuring the feature's effect.
+- **Time confounds.** Cohorts from different months experienced different product versions, marketing motions, and macro conditions. A "cohorts are getting better" trend may just be "the market got better."
+- **Survivorship.** Only the cohorts who stuck around show up in the analysis. The ones who churned are invisible, which makes the survivors look better than the average user.
+
+Default move: when reading observational cohort data, name which of the three traps you're vulnerable to and how you've controlled for it. If you haven't, the data is directional, not decisional.
+
+---
+
 ## When the metrics are lying
 
 Three common failure modes:

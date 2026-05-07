@@ -21,7 +21,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
    ```
    Restart Claude Code. Run `/skills` to confirm the eight `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
-3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
+3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`decision-log.md`](templates/decision-log.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
 4. **Customize rubric weights and criteria for your team's bar.** The three rubrics in [`rubrics/`](rubrics/) — [`pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md), [`strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md), [`product-review-rubric.md`](rubrics/product-review-rubric.md) — are deliberately editable. Re-weight criteria, add team-specific ones (e.g. "addresses regulated-data path"), or replace the five top-level questions in the [The five evaluation criteria](#the-five-evaluation-criteria) section below. The skills cite these files by path, so they pick up your edits automatically.
 
@@ -43,6 +43,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Decide between user research methods (personas vs. JTBD vs. Kano) | [`decision-making/research-methods.md`](decision-making/research-methods.md) |
 | Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
 | Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
+| Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
 | Define what to measure | [`decision-making/metrics.md`](decision-making/metrics.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
@@ -51,7 +52,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |
-| Use a PRD / decision-memo / postmortem template | [`templates/`](templates/) |
+| Use a PRD / decision-memo / decision-log / postmortem template | [`templates/`](templates/) |
 
 ---
 

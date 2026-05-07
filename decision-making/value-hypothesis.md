@@ -136,6 +136,21 @@ Counterintuitive rules from Rachleff:
 - **It's appropriate to *reduce* scope, not add.** Too many benefits make the MVP harder to sell — buyers who only want one of the benefits will reject the product if there's a benefit they don't need.
 - **Don't hedge.** "Hedging is the enemy of entrepreneurs." Pick one lead pin, one MVP, one bet at a time.
 
+### Prototype types — "smallest" is not the same as "shippable"
+
+The smallest test of a leap-of-faith assumption usually isn't a real product. A short menu of disposable validation artifacts, ordered roughly by build cost:
+
+- **Smoke test / fake door.** A landing page or feature button that captures intent. No product behind it. Tests whether anyone wants the thing at all.
+- **Painted door.** Looks like a working feature, but on click delivers a "coming soon" or a manual response. Tests intent at a higher fidelity.
+- **Concierge MVP.** A human (often the founder) does the work behind the scenes, by hand, for a small number of named users. Tests whether the *outcome* is valuable, before automating delivery.
+- **Wizard of Oz.** Looks fully automated to the user. Behind the curtain, humans (or scripts) do the work. Tests the experience of the automated version without paying to build the automation.
+- **Single-feature MVP.** A real, working version of the smallest one feature. No supporting product around it.
+- **Full thin slice.** End-to-end working product covering one job, narrow segment, narrow scope. Story-mapping language.
+
+Picking the right one is mostly a question of *which leap of faith you're testing.* Testing intent? A smoke test is enough. Testing whether the outcome is worth paying for? A concierge MVP. Testing whether the automated experience is acceptable? Wizard of Oz. Testing whether the full motion (acquisition, activation, retention) holds together? A real thin-slice MVP.
+
+The mistake is to skip straight to the thin-slice MVP for every test. Most early hypotheses can be falsified for a fraction of the cost with a smoke test or concierge round first.
+
 ---
 
 ## What "PMF achieved" actually means
