@@ -130,6 +130,34 @@ The rule of thumb: friction at the moment of commitment is usually right. Fricti
 
 ---
 
+## Frequency dictates UI density
+
+A daily task should compress to one screen with low friction. An email send, a quick log, a routine check. The user has the muscle memory; the design should serve it, not interrupt it.
+
+An annual task should expand into a shepherded sequence of steps with deliberate friction. Filing taxes, setting up an estate plan, the once-a-year HR review. The user is afraid, the stakes are high, and the design buys them confidence by going slowly and explaining each step. TurboTax is the canonical reference: a long sequence of small, friendly questions instead of one intimidating form.
+
+The mistake is applying daily-task patterns to annual-task moments (one form with thirty fields for tax filing) or applying annual-task patterns to daily-task moments (a five-step wizard to send an email). Both produce friction in the wrong direction.
+
+**The design move:** estimate the frequency of each task in this product. Compress the daily ones. Shepherd the annual ones. Don't apply the same pattern to both.
+
+**Evaluation question:** how often does the user do this task? If daily, is the surface compressed enough for muscle memory? If annual, is it shepherded enough for the user to feel taken care of?
+
+---
+
+## Sacrifice edge cases for the 80 percent
+
+Good engineers find edge cases. Good designers decide which ones to make harder so the 80 percent flow stays simple.
+
+The Apple vs. early-Android example is the canonical one: early Android exposed every configurable option a user might want; Apple constrained the surface. The constrained surface was usable for most people most of the time. The configurable surface was usable for power users and tiring for everyone else. Power users like the configurable one. Everyone else doesn't last.
+
+The discipline is honest about the trade. Some users genuinely need the edge case. The design move is not to remove it entirely — it's to move it off the primary surface so the default flow stays clean. Settings menus, advanced affordances, progressive disclosure, "show more" expansions, and power-user modes are the tools.
+
+**The design move:** for each edge case currently on the primary surface, ask whether it's serving the 80 percent or the 20 percent. If the latter, move it to a secondary surface without losing the users who depend on it.
+
+**Evaluation question:** what edge cases is this design serving on the primary surface? Could they be moved to a secondary surface without breaking the workflow of the users who need them?
+
+---
+
 ## System 1 and System 2
 
 Two cognitive modes operate in tandem:
@@ -154,6 +182,20 @@ A dark pattern engineers the user into an action that serves the system at the u
 The legal risk is real (FTC, EU consumer law). The brand risk is larger. The product risk is largest — dark patterns damage trust permanently, and trust is the single hardest input to rebuild.
 
 **Evaluation question:** for each persuasive design choice in this product, would the user feel respected by it or manipulated by it if they noticed it consciously? If the answer is "manipulated," it's a dark pattern, regardless of intent.
+
+---
+
+## The crossroad test
+
+A meta-diagnostic that runs across all the principles above: at every decision point in a flow, can the user answer *"what's next"* without thinking?
+
+If the user has to pause, re-read, or check elsewhere to figure out what to do next, the design has failed at that moment. The cost is not just the friction of the pause — the user has dropped out of System 1 and into System 2 for a decision that should have been automatic. Repeated System 2 demands fatigue the user and damage the experience cumulatively, even if no single moment is fatal.
+
+The test is binary. Walk through each crossroad in the design. Ask *"what should the user do next?"* If the answer requires a sentence of explanation rather than being obvious from the screen, the moment needs redesign.
+
+This is also the cleanest test for whether a design is genuinely simple or just sparse. Sparse designs can still fail the crossroad test when the user reaches a moment and doesn't know which of three plausible actions to take. Genuinely simple designs make the right action obvious without the user having to compare options.
+
+**Evaluation question:** at each crossroad in this design, is *"what's next"* obvious from the screen alone, or does it require the user to think? If thinking is required, what specifically is missing — the affordance, the label, the visual hierarchy, the prior context?
 
 ---
 
@@ -185,6 +227,9 @@ Run this before any design review:
 7. **Social proof:** if used, is the reference group goal-aligned?
 8. **Flow:** is the default surface glanceable in three seconds?
 9. **Friction:** does each friction point serve the user's interest, or the system's?
-10. **Posture:** when principles are in tension, has the design taken a stated posture, or is it pretending to honor all of them?
+10. **Frequency match:** does UI density match task frequency (compressed for daily, shepherded for annual)?
+11. **Edge cases:** are edge cases on the primary surface, or moved off it so the 80 percent flow stays clean?
+12. **Crossroad test:** at every decision point, can the user answer "what's next" without thinking?
+13. **Posture:** when principles are in tension, has the design taken a stated posture, or is it pretending to honor all of them?
 
 If two or more of these are vague, the design needs another pass before the review.

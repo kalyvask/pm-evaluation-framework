@@ -110,3 +110,39 @@ Before any solution discussion, you should be able to answer:
 6. **What would have to be true** for our hypothesis to hold? Which of those things is currently a guess?
 
 If two or more of these are vague, you are not ready to scope a solution. Sharpen the diagnosis.
+
+---
+
+## Pivoting as the modal path
+
+Most successful products don't arrive at their winning idea on the first try. Founder-investor data is consistent on the shape: startups that pivoted **two or three times** show the highest success rate, followed by startups that pivoted once. Both zero pivots and four-plus pivots drop sharply. The operational implication for a PM: assume the first framing is wrong, and *budget* for two to three serious pivots before locking in.
+
+This is not the same as "iterate constantly." A pivot is a deliberate change in *who* you're solving for or *what* problem you're solving. Iteration is making the existing solution better. The pivot question is upstream: did our discovery surface a user we hadn't planned for? Did the data reveal that the constraint we thought we were solving is not the binding one? Did our wedge segment turn out to be too small or too unwilling to pay?
+
+The art is recognizing the pivot signal:
+
+- **Lean in** when the same insight keeps showing up across independent sources (interviews, usage data, sales-call notes), when an unexpected segment self-selects into the product, when a workaround pattern emerges that suggests an unmet need adjacent to what you're solving.
+
+- **Pivot** when your current target segment consistently fails to convert despite a product that meets their stated requirements (the requirements were stated wrong), when a smaller adjacent segment is converting easily without being targeted (they are the real target), when the unit economics of the current target imply you can never scale.
+
+- **Suspect you are missing the signal** when teams pattern-match adoption gaps to "marketing," "pricing," or "education." Sometimes those *are* the answer. More often they're the team's preferred answer because they preserve the existing strategy.
+
+The discipline: name the pivot triggers upfront. Pre-commit to a set of leading indicators that, if hit, force a pivot conversation. Without pre-commitment, the team will find reasons to defer pivoting indefinitely, because pivoting is emotionally costly and feels like an admission that the original framing was wrong.
+
+See [`decision-making/value-hypothesis.md`](value-hypothesis.md) for the leap-of-faith framing that makes pivot signals legible, and [`decision-making/metrics.md`](metrics.md) for how to set falsifying thresholds before the pivot conversation gets political.
+
+---
+
+## Faster horses vs. cars
+
+Henry Ford's line — *"if I asked customers what they wanted, they'd have said faster horses"* — is well-rehearsed. The operational version is sharper in the AI era.
+
+When you ask an LLM to generate features for an existing product category, you get faster horses by construction. The training data *is* the existing category. The output is the median of the category with surface variation. This is useful for *filling out* a feature set and corrosive when used to *define* the strategic move.
+
+The cars in any category come from a different question. Uber didn't ask *"how do we make a better taxi-booking app."* They asked *"how does a car arrive when someone needs one."* Airbnb didn't ask *"how do we make a better hotel-booking site."* They asked *"what would a different category of travel feel like."* The reframe is the strategic move; the AI tooling executes it once the question is right.
+
+The discipline: when AI is in your design loop, *use it for breadth, not for direction*. Generate dozens of horse variants to map the category. Then ask the question the training data cannot answer:
+
+> *What is the question the existing category has stopped asking?*
+
+If you cannot answer that, you don't have the car. You have a slightly better horse. See [`decision-making/ai-integration.md`](ai-integration.md) for how this shows up at the product surface and [`ai-and-pm.md`](../ai-and-pm.md) for the broader role-level implications.

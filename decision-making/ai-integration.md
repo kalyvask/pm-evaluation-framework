@@ -92,6 +92,30 @@ Three rules that should hold for any AI feature:
 
 ---
 
+## Hybrid UI for enterprise AI
+
+The four rules above assume the AI is part of the surface. They do not address whether the user should be *forced* to use it.
+
+In enterprise products, the answer is almost always no. Two structural reasons:
+
+**Trust takes time.** Enterprise data is the customer's crown jewels — financial records, customer information, intellectual property, security telemetry. A new AI feature that asks the user to delegate decisions over that data starts with negative trust. The user hasn't yet seen the AI succeed at their specific edge cases; they have no basis to defer to it. Forcing them to use the AI before that trust is built produces resistance, not adoption.
+
+**Not every use case is conversational.** Selecting one item from a known list of fifty is not a chat task. Reading a dashboard is not a chat task. Bulk editing a set of records is not a chat task. The user wants to see the surface, point at the thing they want, and act. A chatbot inserted in front of these flows is added friction, not added intelligence.
+
+The design move is a **hybrid landing**. Give the user explicit control over how AI shows up in the product:
+
+- **AI-first.** Land the user on the AI surface (assistant, chat interface) as the primary entry point. Right for use cases where the user wants to *describe* the outcome rather than navigate to it.
+- **Traditional.** Land on the existing dashboard or task surface. AI is available as a sidebar or side-pane, invoked when the user reaches for it. Right for routine, high-frequency tasks where the user already knows what they want.
+- **Hybrid.** Both surfaces visible at once. The user moves between them based on the moment. Right when use cases span both modes.
+
+The user picks the landing default in settings. The product remembers and serves that default. Power users who want AI everywhere get it. Cautious users who want to do their job the way they did it yesterday get that too. Trust accumulates as the AI demonstrates value, and the user can shift their default over time.
+
+The corollary: when users push back on an AI surface, the resistance is data. It usually means either the trust gap is bigger than the team thought, or the use case the team picked for AI is one users don't want delegated. Both are worth listening to, not engineering around.
+
+**Evaluation question:** can the user choose how AI shows up on the landing page? Is the choice persistent and respected as the default going forward, or is the AI forced regardless of preference?
+
+---
+
 ## When AI is the wrong answer
 
 Not every decision in a product is a candidate for AI. Some moments are better served by a deterministic rule, a curated list, or just a static piece of UI. The cost of AI is non-trivial: latency, failure modes, hallucination risk, debugging difficulty, and the chrome problem above.
@@ -123,6 +147,7 @@ Run this before any AI surface is finalized:
 5. **Model invisibility:** does the surface lead with the outcome or with the model?
 6. **Measurement:** is this feature measurable in the existing user metrics of the surface it touches, not by AI-specific KPIs?
 7. **Data posture:** is the user explicitly told what data is used? Is there a one-tap off switch?
-8. **AI vs. static:** would a deterministic rule or curated list produce the same outcome? If yes, why is the AI version worth the cost?
+8. **Hybrid landing (enterprise):** can the user choose how AI shows up (AI-first, traditional, hybrid), and is that choice respected as the default going forward?
+9. **AI vs. static:** would a deterministic rule or curated list produce the same outcome? If yes, why is the AI version worth the cost?
 
 If two or more answers are weak, the AI surface isn't ready. Cut the AI and ship the static version, or close the gaps before launch.
