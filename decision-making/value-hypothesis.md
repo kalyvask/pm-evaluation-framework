@@ -194,8 +194,9 @@ Before pouring growth dollars into a product, you should be able to answer these
 5. **What's the smallest MVP that tests the leap of faith?** Not the smallest product. The smallest test of *the assumption*.
 6. **What would falsify the hypothesis?** A specific metric, a specific threshold, a specific timeline. If you can't write the falsifying answer, you're not running an experiment.
 7. **What's the kill criterion?** If validation fails, do you pivot the who or restart on the what? Pre-decide.
+8. **The would-you-buy-it gut check.** If you (the PM) and the core team were not employed on this product, would you pay for it and use it as your real solution? A consistent *"no"* or a hedged *"I'd download but not pay"* is not a kill signal on its own, but it's a flag — usually that the product solves a problem you and your team imagine users have rather than one you personally feel. Especially important when no one on the team is a target user; in those cases the answer is almost always "no" and the response is *go talk to more target users*, not *trust ourselves anyway*.
 
-If you can't answer all seven — especially 4 through 7 — you don't have a value hypothesis. You have an idea you like.
+If you can't answer all eight — especially 4 through 7 — you don't have a value hypothesis. You have an idea you like.
 
 ---
 

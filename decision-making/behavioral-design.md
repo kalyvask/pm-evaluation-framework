@@ -158,6 +158,24 @@ The discipline is honest about the trade. Some users genuinely need the edge cas
 
 ---
 
+## Mental models
+
+Users arrive at a product with pre-existing beliefs about how the underlying system works. Those beliefs are often wrong — but they shape every interaction. *The AC has a temperature dial.* (Most don't; they have on/off and a thermostat target.) *Antivirus software scans the computer while it's shut down.* (No.) *Closing the app stops the background process.* (Sometimes, sometimes not.)
+
+These mental models persist even when the product behaves otherwise. A user who believes the system works one way will interpret unexpected behavior as a *bug* before they revise the model. The product can be objectively correct and still feel broken because the mental model says it should do something different.
+
+Three responses, only two of which work:
+
+- **Work with the existing mental model.** Match the user's expectations even if the underlying mechanism is different. The product feels intuitive because the surface matches what the user already believes. Most consumer products that feel "magical" are doing this.
+- **Teach a new mental model — deliberately.** When the mechanism is genuinely novel and the user can't continue without understanding it, surface the model. An inline diagram, an onboarding flow, a "how this works" panel. Rubrik exposes parts of its black box this way so admins can build accurate expectations. Required when AI changes how an existing surface behaves (the user's model needs an update before the AI's outputs make sense).
+- **Ignore the mental model.** Build the product so the user has to figure out the mechanism on their own. This is the default failure mode in engineering-led products. The team's blameless name for it is "user education." The user's name for it is "this is confusing."
+
+A useful diagnostic: ask three target users to describe, in their own words, what they think the product does when they take a specific action. If the descriptions diverge from the actual mechanism in ways that matter, the design has to either move to match them or teach them. Choosing not to choose is the failure mode.
+
+**Evaluation question:** what mental model does this product require the user to hold? Is the design working with their existing one, deliberately teaching a new one, or assuming they'll figure it out?
+
+---
+
 ## System 1 and System 2
 
 Two cognitive modes operate in tandem:
@@ -229,7 +247,8 @@ Run this before any design review:
 9. **Friction:** does each friction point serve the user's interest, or the system's?
 10. **Frequency match:** does UI density match task frequency (compressed for daily, shepherded for annual)?
 11. **Edge cases:** are edge cases on the primary surface, or moved off it so the 80 percent flow stays clean?
-12. **Crossroad test:** at every decision point, can the user answer "what's next" without thinking?
-13. **Posture:** when principles are in tension, has the design taken a stated posture, or is it pretending to honor all of them?
+12. **Mental models:** does the design work with the user's existing mental model, teach a new one deliberately, or assume they'll figure it out?
+13. **Crossroad test:** at every decision point, can the user answer "what's next" without thinking?
+14. **Posture:** when principles are in tension, has the design taken a stated posture, or is it pretending to honor all of them?
 
 If two or more of these are vague, the design needs another pass before the review.

@@ -105,6 +105,9 @@ For each (max three; quality > quantity):
 ## What I'd change before the design review
 [The 1–3 concrete actions. Each one must be a design move a designer could pick up. "Move the cohort-selection step before the email collection" beats "rethink onboarding."]
 
+## Gut check
+[One honest line: would the PM and the team actually pay for and use this product as non-employees? A unanimous "no" or hedged "I'd download but not pay" is a flag — usually that the design has solved an imagined problem rather than a real one. Surface it; do not conclude from it.]
+
 ## Verdict
 [Ship / revise the design / rethink the surface / kill, with one sentence of reasoning.]
 ```
@@ -116,6 +119,7 @@ For each (max three; quality > quantity):
 - **Specific re-writes.** A re-write that a designer can execute without re-asking. Not "consider simplifying" — *"collapse the three setup questions to one: goal. Defer pace and source until after the first successful action."*
 - **Distinguishes design holes from strategy holes.** If the issue is "wrong target user," route to `pm-red-team` or `decision-making/problem-framing.md`. Don't smuggle a strategy critique into a design critique.
 - **Cites the repo.** When naming a principle, point at `decision-making/behavioral-design.md` § [principle] so the reviewer can deepen the read. Same for AI surface critiques and `decision-making/ai-integration.md`.
+- **Runs the would-you-buy gut check.** Even when the design is technically clean, a unanimous "no, I wouldn't pay for and use this myself" from the team is a signal worth surfacing. It's not a kill on its own, but it almost always means the design solves a problem the team imagines users have rather than one they personally feel.
 
 ## Anti-patterns
 

@@ -201,6 +201,34 @@ If you can't answer 5 in particular, the interview round is a ritual, not resear
 
 ---
 
+## Sample size: the 8-to-12 rule
+
+A working rule of thumb from user research: **8 to 12 interviews with people who genuinely represent the target audience** surface roughly 90 percent of the responses you'd get from the full population. Below 8 you're sampling noise. Above 12 the marginal return drops sharply.
+
+The rule has one hard caveat: *"genuinely represent"* is doing all the work. Twelve interviews with people who are easy to recruit but don't match your target tell you nothing about your target. Eight interviews with carefully recruited representatives of your actual segment beat fifty interviews with whoever volunteered.
+
+The mistake is treating the rule as *"do twelve interviews"* instead of *"do twelve interviews with the right twelve people."* Recruiting is the load-bearing step. If your earlyvangelist target is *"VPs of Engineering at series-B fintechs,"* twelve product designers don't count, regardless of how thoughtful the conversations were.
+
+A useful corollary: when responses across the first 6 to 8 interviews start *clustering* — the same complaints, the same workarounds, the same goals coming up independently — you have signal that you're sampling a real segment. When the first 8 interviews give you 8 different answers, you're either talking to the wrong segment or your segment is too broad to be a target.
+
+For exploratory rounds (you're not yet sure who the user is), expect to need closer to 20 conversations because half of them will be informative about *who not to target*. For validation rounds (you know the segment and you're testing a specific hypothesis), 8 to 12 is enough if the recruiting is honest.
+
+---
+
+## The "designing for yourself" trap
+
+The most reliable way to interview only the wrong people: assume *you are* your user.
+
+You probably aren't, even if you fit the demographic. A PM working on a product for new parents who is also a new parent will design for *their* version of the experience and miss the 80 percent of variance across other new parents — different incomes, different work schedules, different cultural expectations, different support networks. Your mental model is not your users' mental model.
+
+Users carry pre-existing beliefs about how systems work that often diverge from how the systems actually work. The canonical examples: *"the AC has a temperature dial,"* *"antivirus scans the computer while it's shut down,"* *"closing an app stops the background process."* A designer's job is to either work with those models or teach a new one (see [`decision-making/behavioral-design.md`](behavioral-design.md) § "Mental models"). Ignoring them is what produces products that are usable for the designer and confusing for everyone else.
+
+Operationally: when you find yourself thinking *"obviously the user would..."*, treat the word *obviously* as a flag, not an insight. Run the question past an actual user — preferably one who doesn't share your background, profession, or technical fluency. The gap between your *obvious* and their response is the data.
+
+The dual failure mode is recruiting only people who already think like you. Friends, colleagues, alumni networks, and "people who responded to the cold email" all tend to over-represent your own perspective. The hard recruiting work — finding eight users who *don't* sound like you — is what separates a research round from an echo chamber.
+
+---
+
 ## Common interview anti-patterns
 
 - **Pitching disguised as a question.** *"We're building X — would you use it?"* Replace with *"How do you handle this today?"*
