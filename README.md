@@ -18,7 +18,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The ten skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The eleven skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
@@ -52,6 +52,8 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
 | Define what to measure | [`decision-making/metrics.md`](decision-making/metrics.md) |
+| Identify the aha moment and design the path to it | [`decision-making/activation.md`](decision-making/activation.md) |
+| Critique an activation or conversion funnel against the right model | [`decision-making/conversion.md`](decision-making/conversion.md) |
 | Review the user-facing design layer of a PRD or feature | [`decision-making/behavioral-design.md`](decision-making/behavioral-design.md) |
 | Put AI into a product without bolting on a chatbot | [`decision-making/ai-integration.md`](decision-making/ai-integration.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
@@ -66,7 +68,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## Claude skills
 
-The repo ships with ten [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with eleven [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
 | Stage | Skill | Use when |
 |---|---|---|
@@ -78,6 +80,7 @@ The repo ships with ten [Claude Code skills](https://docs.claude.com/en/docs/cla
 | **Build / Review** | [`pm-design-critic`](.claude/skills/pm-design-critic/SKILL.md) | You have a PRD or design spec drafted and want the user-facing surface critiqued against behavioral and UX principles (defaults, friction, choice architecture, AI surfaces) |
 | **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
 | **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
+| **Measure / Grow** | [`pm-funnel-critic`](.claude/skills/pm-funnel-critic/SKILL.md) | You have an activation funnel, conversion funnel, paywall, or trial design and want the funnel-layer logic pressure-tested (binding stage, drop-off driver, model fit) |
 | **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
 | **Challenge** | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) | You have an existing critique (from another skill, an external AI, or yourself) and want it adversarially re-reviewed before you act on it |
 
