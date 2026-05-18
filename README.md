@@ -23,7 +23,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the ten `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the eighteen `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
 3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`decision-log.md`](templates/decision-log.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
@@ -63,6 +63,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |
 | Use a PRD / decision-memo / decision-log / postmortem template | [`templates/`](templates/) |
+| Turn the framework into a daily PM agent partner (morning briefs, meeting prep, weekly review) | [Operate-stage setup](#operate-stage-setup-the-agent-partner-layer) |
 
 ---
 
@@ -102,12 +103,14 @@ The seven operate-stage skills (morning brief, meeting prep, meeting debrief, in
 To set up `pm-state/`:
 
 1. Pick a location. Default: `~/pm-state/`. If you want it synced (recommended), use a cloud-synced path like `~/OneDrive/Documents/pm-state/` and point the skills at that path. The operate-stage skills currently reference `C:/Users/alexa/OneDrive/Documents/GSB/pm-state/`; fork the repo and update the path for your install.
-2. Scaffold the structure (see [`pm-state/INSTRUCTIONS.md`](pm-state-template/INSTRUCTIONS.md) if included, or follow the folder layout below):
-   - `you.md` — personal PM context (style, role, active projects, cross-project stakeholders)
-   - `stakeholders.md` — global stakeholder list
+2. Scaffold the structure outside this repo. The folder layout is:
+   - `you.md` — personal PM context (style, role, active projects, cross-project stakeholders). The agent reads this at the start of every PM session.
+   - `INSTRUCTIONS.md` — overview of the folder for the agent and any human reader
+   - `stakeholders.md` — global cross-project stakeholder list
    - `decisions-log.md` — cross-project decisions worth remembering
    - `lessons.md` — cross-project lessons learned
-   - `inbox/` — where the agent writes daily and weekly briefs
+   - `inbox/` — where the agent writes daily and weekly briefs (e.g. `2026-05-18-morning-brief.md`)
+   - `projects/_template/` — copy this when starting a new project
    - `projects/<name>/` — one folder per active project, containing `status.md`, `decisions.md`, `open-questions.md`, `stakeholders.md`, `todos.md`
 3. Fill in `you.md`. This is the single most important file — the agent reads it at the start of every PM session.
 4. Populate one or two active projects. Don't try to capture every project on day one; start with the two that matter most this week.
