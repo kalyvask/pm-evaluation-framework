@@ -18,7 +18,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The eleven skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The eighteen skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
@@ -68,7 +68,9 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## Claude skills
 
-The repo ships with eleven [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with eighteen [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+
+Eleven of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
 
 | Stage | Skill | Use when |
 |---|---|---|
@@ -83,8 +85,37 @@ The repo ships with eleven [Claude Code skills](https://docs.claude.com/en/docs/
 | **Measure / Grow** | [`pm-funnel-critic`](.claude/skills/pm-funnel-critic/SKILL.md) | You have an activation funnel, conversion funnel, paywall, or trial design and want the funnel-layer logic pressure-tested (binding stage, drop-off driver, model fit) |
 | **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
 | **Challenge** | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) | You have an existing critique (from another skill, an external AI, or yourself) and want it adversarially re-reviewed before you act on it |
+| **Operate** | [`pm-context-loader`](.claude/skills/pm-context-loader/SKILL.md) | You're starting a PM workflow and need the agent to load your `pm-state/` (personal style, active projects, stakeholders) before doing anything else. Most operate-stage skills chain to this first. |
+| **Operate** | [`pm-morning-brief`](.claude/skills/pm-morning-brief/SKILL.md) | First thing in the morning. Pulls calendar, inbox, project todos, and yesterday's transcripts; surfaces the top 3 today plus slipped commitments. Writes to `pm-state/inbox/` |
+| **Operate** | [`pm-meeting-prep`](.claude/skills/pm-meeting-prep/SKILL.md) | Before a meeting that matters. Pulls attendees, prior transcripts, project state, stakeholder context; drafts a one-page brief including the question you don't want asked |
+| **Operate** | [`pm-meeting-debrief`](.claude/skills/pm-meeting-debrief/SKILL.md) | Right after a meeting. Extracts commitments and decisions from a Granola transcript, drafts follow-ups, proposes writes to project todos and decisions files |
+| **Operate** | [`pm-inbox-triage`](.claude/skills/pm-inbox-triage/SKILL.md) | When the inbox is backed up. Classifies threads, drafts replies for the substantive ones, surfaces stale threads where you're awaiting or being awaited |
+| **Operate** | [`pm-weekly-review`](.claude/skills/pm-weekly-review/SKILL.md) | Friday afternoon. What got done, what slipped, what's hanging, what to renegotiate. Catches the patterns the daily brief misses |
+| **Operate** | [`pm-stakeholder-tracker`](.claude/skills/pm-stakeholder-tracker/SKILL.md) | Weekly or before any high-stakes push. Who's going cold, who has open commitments hanging, who needs proactive attention |
 
 To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
+
+### Operate-stage setup (the agent partner layer)
+
+The seven operate-stage skills (morning brief, meeting prep, meeting debrief, inbox triage, weekly review, stakeholder tracker, context loader) read from a `pm-state/` folder you maintain. This is what turns the reactive skill set into a daily PM agent partner.
+
+To set up `pm-state/`:
+
+1. Pick a location. Default: `~/pm-state/`. If you want it synced (recommended), use a cloud-synced path like `~/OneDrive/Documents/pm-state/` and point the skills at that path. The operate-stage skills currently reference `C:/Users/alexa/OneDrive/Documents/GSB/pm-state/`; fork the repo and update the path for your install.
+2. Scaffold the structure (see [`pm-state/INSTRUCTIONS.md`](pm-state-template/INSTRUCTIONS.md) if included, or follow the folder layout below):
+   - `you.md` — personal PM context (style, role, active projects, cross-project stakeholders)
+   - `stakeholders.md` — global stakeholder list
+   - `decisions-log.md` — cross-project decisions worth remembering
+   - `lessons.md` — cross-project lessons learned
+   - `inbox/` — where the agent writes daily and weekly briefs
+   - `projects/<name>/` — one folder per active project, containing `status.md`, `decisions.md`, `open-questions.md`, `stakeholders.md`, `todos.md`
+3. Fill in `you.md`. This is the single most important file — the agent reads it at the start of every PM session.
+4. Populate one or two active projects. Don't try to capture every project on day one; start with the two that matter most this week.
+5. (Optional) Schedule the morning brief and weekly review as recurring jobs so they run automatically (e.g., 7:30am weekdays for the morning brief, 4pm Fridays for the weekly review).
+
+The maintenance contract: 5 minutes a day updating `todos.md` and `decisions.md` for the active project, 15 minutes a week refreshing `you.md` and stakeholder lists. If you stop maintaining the state, the agent's outputs go stale and you stop trusting them. The maintenance is what makes the partnership work.
+
+The `pm-state/` folder itself is **not** checked into this repo — it contains personal context, stakeholder names, and decision history that should stay private. Each user maintains their own outside the repo.
 
 ---
 
