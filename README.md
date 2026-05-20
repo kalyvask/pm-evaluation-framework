@@ -18,7 +18,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The eighteen skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The twenty skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
@@ -71,16 +71,18 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 The repo ships with eighteen [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
-Eleven of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
+Thirteen of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
 
 | Stage | Skill | Use when |
 |---|---|---|
 | **Frame** | [`pm-framework-selector`](.claude/skills/pm-framework-selector/SKILL.md) | You have a decision in front of you and don't know which framework to reach for |
 | **Frame / decide** | [`pm-decision-coach`](.claude/skills/pm-decision-coach/SKILL.md) | You want to be walked through a decision: framing → research → prioritization → risk |
+| **Frame / decide** | [`pm-design-process-router`](.claude/skills/pm-design-process-router/SKILL.md) | You're scoping a feature and need to decide whether it runs through the full Research → PRD → Concept → Detailed → Code pipeline or the Express Lane (verbal sign-off, no Figma). Routes by scope (XS/S/M/L/XL) with moderators for novelty, reversibility, and visibility |
 | **Discover** | [`pm-customer-interview-coach`](.claude/skills/pm-customer-interview-coach/SKILL.md) | You're prepping or debriefing customer interviews and want them stress-tested against the Mom Test rules |
 | **Discover** | [`pm-value-hypothesis-tester`](.claude/skills/pm-value-hypothesis-tester/SKILL.md) | You're about to launch, fundraise, or scale, and you want the underlying what / who / how bet pressure-tested |
 | **Build** | [`pm-prd-drafter`](.claude/skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
 | **Build / Review** | [`pm-design-critic`](.claude/skills/pm-design-critic/SKILL.md) | You have a PRD or design spec drafted and want the user-facing surface critiqued against behavioral and UX principles (defaults, friction, choice architecture, AI surfaces) |
+| **Build / Review** | [`pm-persona-stress-tester`](.claude/skills/pm-persona-stress-tester/SKILL.md) | You have a design or flow and want it walked through step-by-step from a specific persona's point of view — what they see, think, expect, and where they bounce. 10-minute usability audit before scheduling real user research |
 | **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
 | **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
 | **Measure / Grow** | [`pm-funnel-critic`](.claude/skills/pm-funnel-critic/SKILL.md) | You have an activation funnel, conversion funnel, paywall, or trial design and want the funnel-layer logic pressure-tested (binding stage, drop-off driver, model fit) |
