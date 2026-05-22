@@ -122,7 +122,13 @@ To set up `pm-state/`:
 
 The maintenance contract: 5 minutes a day updating `todos.md` and `decisions.md` for the active project, 15 minutes a week refreshing `you.md` and stakeholder lists. If you stop maintaining the state, the agent's outputs go stale and you stop trusting them. The maintenance is what makes the partnership work.
 
-The `pm-state/` folder itself is **not** checked into this repo — it contains personal context, stakeholder names, and decision history that should stay private. Each user maintains their own outside the repo.
+The `pm-state/` folder itself is **not** checked into this repo. It contains personal context, stakeholder names, and decision history that should stay private. Each user maintains their own outside the repo.
+
+### Relationship with chief-of-staff
+
+The seven operate-stage skills run standalone in any Claude Code session that can see a `pm-state/` folder. If you want a full runtime around them, with Gmail and Google Calendar integration, a JSONL work queue with provenance, a permission engine with tier checks, scheduled overnight `/email-triage` and `/calendar-prep` jobs, conformance audits encoded as code, and a typed-link graph over stakeholders and decisions, see [chief-of-staff](https://github.com/kalyvask/chief-of-staff). It is the runtime layer that wires this skill library (and four specialist subagents of its own) into a daily PM loop.
+
+The split: pm-evaluation-framework is the public library you can drop into any repo. chief-of-staff is the personal runtime you install once.
 
 ---
 
