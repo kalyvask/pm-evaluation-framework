@@ -144,6 +144,36 @@ A composite of patterns that show up in successful AI-product PMs:
 
 ---
 
+## Evals replace the PRD for model work
+
+For traditional software, the PRD is the artifact engineering builds against. For model work, the center of gravity has shifted. The PRD still exists, mostly as a coordination doc for launch comms, design, and downstream teams. The artifact that actually drives the build is the eval set.
+
+The reasoning: a PRD says *what the feature should do*. An eval set says *whether the model is doing it, on which inputs, with what failure modes*. When the model is the product, the second answer is the load-bearing one.
+
+Practical implications:
+
+- **Spec the evals before the prose.** If you can't describe the eval cases that would falsify the feature, the PRD prose is also vague.
+- **The eval set is a living artifact.** It moves as you learn; the PRD usually doesn't.
+- **There's no "the PRD is done" without an eval set behind it.**
+
+---
+
+## When to ship before the model is ready
+
+Not every AI capability has to be polished before users see it. The cost of waiting can outweigh the cost of an imperfect first version, especially when the second-loop learning is the point. Five questions for the call:
+
+1. **Is it generally safe?** Not "no failure modes." "No high-severity failure modes the user can't recover from."
+2. **Will we learn something by shipping that we can't learn by waiting?** If yes, the slope of improvement after ship is part of the case for shipping.
+3. **Is it useful for some users at current quality, even if not for everyone?** Developer surfaces can ship at 20% accuracy if developers will iterate around it. Consumer surfaces usually can't.
+4. **Is the form factor going to be broadly applied later?** A novel form factor (computer use, agentic loops, MCP) has option value worth shipping for. A polished version of an existing form factor has less.
+5. **Will the next version be materially better because of what users did with this one?**
+
+If three of the five are yes, ship the imperfect thing. If two are clearly no, hold.
+
+Not shipping is also a decision, with its own cost. The default isn't "wait for polish."
+
+---
+
 ## Decision checklist
 
 When considering an AI feature:

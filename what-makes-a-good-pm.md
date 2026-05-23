@@ -46,7 +46,13 @@ When something goes wrong externally, the PM takes the hit. They do not throw en
 
 The worst version of an exec conversation is one where the executive learns about a problem from a customer or a competitor. A good PM gets ahead of that with a brief, honest message: *here's what we're seeing, here's what we don't yet know, here's what we're doing about it, here's when I'll have more.* Tell your boss before they hear it from somewhere else.
 
-### 8. In the AI era: they can build a prototype before asking for engineering investment
+### 8. They stay personally close to the raw user signal
+
+The temptation as a PM grows is to delegate raw user signal (interview transcripts, consented feedback, in-product thumbs-up/down) to research, analytics, or an LLM summary, and work from the synthesis. This is how PMs lose taste. The signal that builds product judgment is in the messy, contradictory, specific things real users actually said. Good PMs read the raw transcripts themselves, especially the consented thumbs-down ones, and stay close enough to disagree with the synthesis when it's wrong.
+
+If you're making decisions on a dashboard you didn't build and feedback you didn't read, your judgment is borrowed from whoever built them. Borrow sparingly.
+
+### 9. In the AI era: they can build a prototype before asking for engineering investment
 
 The bar has moved. A PM who can stand up a working prototype — not a Figma flow, an actual interactive thing — can validate demand, surface real friction, and build internal buy-in *before* asking for headcount. Pitching a feature you've never tried to use yourself is increasingly a luxury.
 
