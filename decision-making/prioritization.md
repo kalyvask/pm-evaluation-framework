@@ -169,6 +169,66 @@ That way, RICE governs the everyday work, the strategic narrative governs the be
 
 ---
 
+## When user-demand ranking is wrong
+
+Most prioritization frameworks above (RICE, MoSCoW, Opportunity Scoring) assume the right answer is the one users ask for loudest. Often it is. Sometimes it isn't. When brand, moat, vision, or team capacity disagree with user-demand ranking, the team needs a meta-check to sequence the override considerations. This section is that check.
+
+The Streamlit case (a public PM example, post-launch): the team had five user-requested features, all reasonable, none cheap (state, components, deployment, customization, caching). User-vote count alone would have produced one ranking. The team's actual sequencing was different in three of the five cases, because user-demand was the wrong signal for those features.
+
+The decision logic is a **sequence**, not a multi-axis tradeoff. Ask the questions in order; the first one that has a clear answer wins.
+
+### Step 1: Diagnose the bleed
+
+Which stage of the user journey is hurting most right now? Not all stages at once. Pick one.
+
+| Bleeding stage | What overrides demand | What it looks like in practice |
+|---|---|---|
+| Onboarding (signups not converting) | Brand defense; first-impression risk | First page promises something the product can't deliver |
+| Activation (signups not reaching aha) | Speed and reliability of the first complete experience | First app feels slow, broken, or confusing |
+| Retention (active users dropping out) | Stickiness, switching costs, session depth | Users try it once, never return |
+| Growth (no virality or ecosystem) | Network effects, integration depth, distribution control | Users love it but can't or won't get others to use it |
+
+The bleeding stage decides which override axis dominates this quarter.
+
+### Step 2: Map each candidate feature to an axis
+
+For each feature in contention, ask: *which axis does this feature defend or build?*
+
+The Streamlit mapping was:
+
+- Caching defended *activation* (slow first app meant activation bleed; the team was about to break the "we are fast" brand promise)
+- Deployment built *growth and distribution control* (owning the viral loop instead of depending on partner hosts)
+- State defended *retention* (deeper sessions, returning to in-progress work)
+- Components built *ecosystem moat* (long-term integration lock-in)
+- Customization expanded *enterprise revenue moat*, but conflicted with the founding vision
+
+If two features defend the same axis, the higher-impact one wins. If they defend different axes, the one defending the **currently bleeding** stage wins.
+
+### Step 3: Apply three cross-cutting filters
+
+These three override the stage-mapping when they apply:
+
+1. **Reversibility.** If shipping wrong is hard to undo (open source, public API, brand-defining commitment), raise the bar. Streamlit held customization for years because shipping bad customization would have polluted the "5 lines = beautiful app" identity, and they couldn't walk it back without breaking trust with the existing user base. Reversibility raised the bar high enough that customization waited for explicit enterprise-contract pressure.
+
+2. **Capacity match.** Match feature to who can build it. Founder-bottlenecked features get sequenced; delegable features can start in parallel. Streamlit started components because a passionate engineer wanted to build them and it was delegable. State, caching, and customization were founder-bottlenecked.
+
+3. **Hack-vs-polished parallelism.** Can a rough version ship now to power users while the polished version waits? Streamlit shipped a State hack at month one; the full version came later. This buys time on the polished version without losing the power-user segment. See `frameworks/02-defining-the-mvp.md` § "Hack track vs. polished track for developer products" for the full pattern.
+
+### Step 4: Sequence with parallelism
+
+The output of this pass is not *one* feature. It's four things simultaneously:
+
+- **One for what's bleeding now** (brand or activation defense). Streamlit picked caching here.
+- **One that's compounding but slow** (moat or ecosystem build). Streamlit started deployment and components in parallel.
+- **One that's hackable to buy time** (parallel quick-win for the loud-but-deferrable segment). Streamlit shipped State hacked.
+- **Defer the rest with explicit named reasons.** Streamlit explicitly held customization on vision grounds and communicated that internally.
+
+The common mistake is treating prioritization as "which one of these five do we do" instead of "which one defends what's bleeding, which one compounds in the background, which one ships as a hack, and which one is the explicit not-yet."
+
+A useful sanity test: can the team articulate, in one sentence each, the reason for the top-priority bet *and* the reason for the deferred item? If the deferred item has no explicit reason ("we just didn't get to it"), the prioritization didn't run.
+
+---
+
 ## Decision checklist
 
 Before locking in a quarterly roadmap:
