@@ -171,9 +171,9 @@ That way, RICE governs the everyday work, the strategic narrative governs the be
 
 ## When user-demand ranking is wrong
 
-Most prioritization frameworks above (RICE, MoSCoW, Opportunity Scoring) assume the right answer is the one users ask for loudest. Often it is. Sometimes it isn't. When brand, moat, vision, or team capacity disagree with user-demand ranking, the team needs a meta-check to sequence the override considerations. This section is that check.
+Most prioritization frameworks above (RICE, MoSCoW, Opportunity Scoring) assume the right answer is the one users ask for loudest. Often it is. Sometimes it isn't. When brand, moat, vision, or team capacity disagree with user-demand ranking, the team needs a meta-check to sequence the override axes. This section is that check.
 
-The Streamlit case (a public PM example, post-launch): the team had five user-requested features, all reasonable, none cheap (state, components, deployment, customization, caching). User-vote count alone would have produced one ranking. The team's actual sequencing was different in three of the five cases, because user-demand was the wrong signal for those features.
+The setup it's built for: the team has three to seven user-requested features, all reasonable, all expensive, more than one can be shipped this quarter. User-vote count would produce one ranking. Strategic axes (brand, moat, vision, capacity, sequence) would produce a different one. The team needs a defensible way to choose.
 
 The decision logic is a **sequence**, not a multi-axis tradeoff. Ask the questions in order; the first one that has a clear answer wins.
 
@@ -188,44 +188,44 @@ Which stage of the user journey is hurting most right now? Not all stages at onc
 | Retention (active users dropping out) | Stickiness, switching costs, session depth | Users try it once, never return |
 | Growth (no virality or ecosystem) | Network effects, integration depth, distribution control | Users love it but can't or won't get others to use it |
 
-The bleeding stage decides which override axis dominates this quarter.
+The bleeding stage decides which override axis dominates this quarter. If two stages look equally hurt, the one closer to the top of the funnel wins: a broken onboarding silently disqualifies you from the activation problem mattering at all.
 
 ### Step 2: Map each candidate feature to an axis
 
-For each feature in contention, ask: *which axis does this feature defend or build?*
+For each feature in contention, answer three diagnostic questions:
 
-The Streamlit mapping was:
+1. **Which axis does this feature defend or build?** Brand promise, activation quality, retention/stickiness, ecosystem moat, distribution control, revenue moat, or vision integrity.
+2. **What's the user-visible cost if this never ships?** Some features have a load-bearing absence: without them, users churn, the brand suffers, or expansion stops. Other features are merely "nice for the segment that asked."
+3. **Is the user-vote count higher or lower than the strategic-axis ranking would suggest?** Disagreements are where this pass earns its keep. Agreement just means RICE was right.
 
-- Caching defended *activation* (slow first app meant activation bleed; the team was about to break the "we are fast" brand promise)
-- Deployment built *growth and distribution control* (owning the viral loop instead of depending on partner hosts)
-- State defended *retention* (deeper sessions, returning to in-progress work)
-- Components built *ecosystem moat* (long-term integration lock-in)
-- Customization expanded *enterprise revenue moat*, but conflicted with the founding vision
+Then apply the tiebreakers:
 
-If two features defend the same axis, the higher-impact one wins. If they defend different axes, the one defending the **currently bleeding** stage wins.
+- If two features defend the same axis, the higher-impact one wins.
+- If they defend different axes, the one defending the **currently bleeding** stage wins.
+- If the highest user-vote feature defends a non-bleeding axis, it gets deferred regardless of vote count. The team has to be willing to communicate the deferral explicitly.
 
 ### Step 3: Apply three cross-cutting filters
 
 These three override the stage-mapping when they apply:
 
-1. **Reversibility.** If shipping wrong is hard to undo (open source, public API, brand-defining commitment), raise the bar. Streamlit held customization for years because shipping bad customization would have polluted the "5 lines = beautiful app" identity, and they couldn't walk it back without breaking trust with the existing user base. Reversibility raised the bar high enough that customization waited for explicit enterprise-contract pressure.
+1. **Reversibility.** If shipping wrong is hard to undo (open source, public API, brand-defining commitment, fundamental UX paradigm), raise the bar. A one-way-door feature requires higher confidence before shipping; a two-way-door feature can ship faster and be revised. Open-source maintainers, API platform teams, and any team whose product is the user's deep workflow infrastructure face this constraint hardest. A common failure: shipping the user-requested feature in the wrong form because the team didn't notice it was one-way, then carrying the bad version for years.
 
-2. **Capacity match.** Match feature to who can build it. Founder-bottlenecked features get sequenced; delegable features can start in parallel. Streamlit started components because a passionate engineer wanted to build them and it was delegable. State, caching, and customization were founder-bottlenecked.
+2. **Capacity match.** Match feature to who can build it. Founder-bottlenecked or senior-engineer-bottlenecked features get sequenced because there's only so much top capacity. Delegable features (those a passionate or autonomous engineer can pick up without deep core knowledge) can start in parallel with the bottlenecked ones. If you're capacity-constrained on top engineers and you sequence the wrong feature first, the delegable work sits idle while the bottleneck queue stretches.
 
-3. **Hack-vs-polished parallelism.** Can a rough version ship now to power users while the polished version waits? Streamlit shipped a State hack at month one; the full version came later. This buys time on the polished version without losing the power-user segment. See `frameworks/02-defining-the-mvp.md` § "Hack track vs. polished track for developer products" for the full pattern.
+3. **Hack-vs-polished parallelism.** Can a rough version ship now to power users while the polished version waits? For products with strong power-user contingents (developer tools, infrastructure, technical platforms), this is often the right move. Power users tolerate rough edges, file useful bug reports, and build internal credibility for the feature; the polished version benefits from their feedback. See `frameworks/02-defining-the-mvp.md` § "Hack track vs. polished track for developer products" for the full pattern.
 
 ### Step 4: Sequence with parallelism
 
 The output of this pass is not *one* feature. It's four things simultaneously:
 
-- **One for what's bleeding now** (brand or activation defense). Streamlit picked caching here.
-- **One that's compounding but slow** (moat or ecosystem build). Streamlit started deployment and components in parallel.
-- **One that's hackable to buy time** (parallel quick-win for the loud-but-deferrable segment). Streamlit shipped State hacked.
-- **Defer the rest with explicit named reasons.** Streamlit explicitly held customization on vision grounds and communicated that internally.
+- **One for what's bleeding now:** the brand or stage-defense feature. Top priority, highest urgency, gets the best capacity.
+- **One that's compounding but slow:** the moat or ecosystem build. Started in parallel, lower urgency, longer payoff. Often delegable.
+- **One that's hackable to buy time:** the parallel quick-win for the segment that's loudest. Hack ships now, polished version waits in the queue.
+- **The rest, deferred with explicit named reasons.** Each deferred item gets a one-sentence reason ("violates vision X," "waits on team capacity Y," "compounds with feature Z which isn't ready"). No deferral by silence.
 
-The common mistake is treating prioritization as "which one of these five do we do" instead of "which one defends what's bleeding, which one compounds in the background, which one ships as a hack, and which one is the explicit not-yet."
+The common mistake is treating prioritization as "which one of these features do we do" instead of "which one defends what's bleeding, which one compounds in the background, which one ships as a hack, and which one is the explicit not-yet." A team that runs only one track at a time falls behind on the others by construction.
 
-A useful sanity test: can the team articulate, in one sentence each, the reason for the top-priority bet *and* the reason for the deferred item? If the deferred item has no explicit reason ("we just didn't get to it"), the prioritization didn't run.
+A useful sanity test: can the team articulate, in one sentence each, the reason for the top-priority bet *and* the reason for the most-deferred item? If the deferred item has no explicit reason ("we just didn't get to it"), the prioritization didn't run.
 
 ---
 
