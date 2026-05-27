@@ -129,6 +129,7 @@ For each (max three; quality > quantity):
 - **Refusing to acknowledge strong design.** Most design specs that reach review have at least one or two well-designed moments. Naming them is part of the critique's credibility.
 - **Critiquing the AI surface without using the AI checklist.** Vague concerns about AI ("feels gimmicky") aren't critiques. Run the four-rule check (confidence, override, fallback, invisibility) and name which rule the surface violates.
 - **Hostile tone for show.** This skill is opinionated about design, not adversarial about the designer. Direct, specific, principle-grounded — not theatrical.
+- **Missing the org pattern.** When a surface looks like a chaotic mess of competing CTAs, ad placements, recommendations, and primary actions, the real critique is often upstream of any single moment. A common pattern: the company has split product teams into monetization and engagement, and the surface is the visible compromise between them. Name the org pattern. The fix is usually a decision about which team owns the surface, not a behavioral-principle adjustment to any individual element.
 
 ## Chain with pm-red-team
 

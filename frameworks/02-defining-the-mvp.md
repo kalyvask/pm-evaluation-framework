@@ -71,6 +71,24 @@ Test: hand the MVP to a real user, ask them to do one thing, and watch. If they 
 
 ---
 
+## Hack track vs. polished track for developer products
+
+For products with a strong power-user contingent (developer tools, infrastructure libraries, technical platforms), the MVP question often resolves into two parallel tracks instead of one.
+
+- **Hack track.** A working but rough version of the feature that power users can adopt today. Documented as experimental, visible in changelogs and dev forums. Often ships months or years before the polished version.
+- **Polished track.** The full version that broad-segment users can pick up without reading internal team threads. Defaults, docs, error states, the works.
+
+The reason to run both tracks: power users learn fastest from a hack. They will tolerate rough edges, file useful bug reports, and build internal credibility for the feature by using it visibly. By the time the polished version ships, the team has months of usage data and the broader rollout is de-risked.
+
+Two cautions:
+
+- **Don't conflate the tracks.** Marketing the hack as the polished version produces a worse experience for broad users than not shipping at all. Label the hack experimental, in changelogs and docs both.
+- **Don't let the hack become permanent.** The hack is an early-access tool with an explicit deadline for the polished version. A feature that has been "experimental" for three years is a debt the team isn't paying back, not a strategy.
+
+This is distinct from MVP. The MVP is "the smallest complete experience for a defined target user." The hack track is "the smallest useful version for a *narrower* user (power users) shipped earlier than the broad version." When the target user splits into power and broad segments with very different patience tolerances, both can be right at once.
+
+---
+
 ## When this phase is done
 
 You should be able to answer, on one page:
