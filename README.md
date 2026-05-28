@@ -49,7 +49,6 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Find product-market fit on a new product or startup (posture, not just framework) | [`decision-making/finding-pmf.md`](decision-making/finding-pmf.md) |
 | Implement an explicit new-product process that maximizes the probability of PMF | [`frameworks/06-product-process-for-pmf.md`](frameworks/06-product-process-for-pmf.md) |
 | Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
-| Evaluate a value hypothesis question-by-question before you build (with a worked example) | [`templates/value-hypothesis-evaluation.md`](templates/value-hypothesis-evaluation.md) |
 | Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
 | Navigate the user-vs-chooser split in enterprise sales | [`decision-making/user-vs-chooser.md`](decision-making/user-vs-chooser.md) |
 | Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
@@ -77,10 +76,9 @@ The bulk of this repo is calibrated for working PMs at established companies: ex
 1. **[`decision-making/finding-pmf.md`](decision-making/finding-pmf.md)** — the posture. Why execution doesn't matter pre-PMF, right-and-non-consensus, leap of faith vs. value hypothesis, the canonical distractions list, savor the surprise.
 2. **[`frameworks/06-product-process-for-pmf.md`](frameworks/06-product-process-for-pmf.md)** — the spine. The eight-step process from insight to validated PMF, the counterintuitive doctrine, build-to-learn vs build-to-execute, and the financing milestones mapped to PMF stages.
 3. **[`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md)** — the mechanics. What/who/how, validation sequence, MVP types, pivot vs. restart, common failures.
-4. **[`templates/value-hypothesis-evaluation.md`](templates/value-hypothesis-evaluation.md)** — the checklist. Question-by-question evaluation of a value hypothesis before you build, with a worked example.
-5. **[`decision-making/customer-interviews.md`](decision-making/customer-interviews.md)** — the technique. Mom Test rules for problem-validation interviews.
-6. **[`frameworks/03-pre-pmf-validation.md`](frameworks/03-pre-pmf-validation.md)** — the measurement. Sean Ellis, 10 happy users, smile curve, ARC framework, GTM checklist.
-7. **[`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) skill** — the operationalization. Walks you through a specific bet end-to-end: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
+4. **[`decision-making/customer-interviews.md`](decision-making/customer-interviews.md)** — the technique. Mom Test rules for problem-validation interviews.
+5. **[`frameworks/03-pre-pmf-validation.md`](frameworks/03-pre-pmf-validation.md)** — the measurement. Sean Ellis, 10 happy users, smile curve, ARC framework, GTM checklist.
+6. **[`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) skill** — the operationalization. Walks you through a specific bet end-to-end: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
 
 Most of the rest of this repo (PRD drafting, launch readiness, exec communication) is calibrated for the post-PMF stage. Run the files above first. Most of the post-PMF content is a distraction pre-PMF.
 
