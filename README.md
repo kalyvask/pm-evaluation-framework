@@ -18,12 +18,12 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The twenty skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the Claude skills so they work in every project, not just this repo.** The twenty-three skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
    ```bash
    mkdir -p ~/.claude/skills
    cp -r .claude/skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the eighteen `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the twenty-three `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
 
 3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`decision-log.md`](templates/decision-log.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
@@ -50,6 +50,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Implement an explicit new-product process that maximizes the probability of PMF | [`frameworks/06-product-process-for-pmf.md`](frameworks/06-product-process-for-pmf.md) |
 | Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
+| Sharpen positioning and the value proposition | [`decision-making/positioning-and-value-prop.md`](decision-making/positioning-and-value-prop.md) |
 | Navigate the user-vs-chooser split in enterprise sales | [`decision-making/user-vs-chooser.md`](decision-making/user-vs-chooser.md) |
 | Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
@@ -61,7 +62,9 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Use AI well as a working PM (prompt principles, anti-patterns, AI/human decision matrix, hallucination handling) | [`decision-making/ai-craft-for-pms.md`](decision-making/ai-craft-for-pms.md) |
 | Reusable AI prompts for common PM artifacts (interviews, PRDs, PR/FAQ, competitive monitoring) | [`templates/pm-prompt-library.md`](templates/pm-prompt-library.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
+| Align stakeholders before a decision goes up the chain | [`cross-functional/stakeholder-alignment.md`](cross-functional/stakeholder-alignment.md) |
 | Run a launch where some failure is expected | [`cross-functional/failure-management.md`](cross-functional/failure-management.md) |
+| Understand what separates a good PM from an average one | [`what-makes-a-good-pm.md`](what-makes-a-good-pm.md) |
 | Understand how AI is changing the PM role | [`ai-and-pm.md`](ai-and-pm.md) |
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
@@ -90,9 +93,9 @@ The line between pre-PMF and post-PMF often runs through a single company. A tea
 
 ## Claude skills
 
-The repo ships with eighteen [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with twenty-three [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
-Thirteen of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
+Sixteen of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
 
 | Stage | Skill | Use when |
 |---|---|---|

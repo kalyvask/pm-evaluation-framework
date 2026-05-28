@@ -10,6 +10,8 @@ Twenty-seven frameworks, organized by where in the product lifecycle they earn t
 | 4. [Post-PMF Growth](04-post-pmf-growth.md) | Efficient, repeatable expansion | AARRR (Pirate Metrics) · HEART · Cohort Retention · LTV / CAC · Viral Coefficient (K) · Growth Accounting |
 | 5. [Continuous Prioritization](05-continuous-prioritization.md) | Improve North Star via bets | RICE · WSJF · Opportunity Scoring · Storytelling Narrative · North Star Metric |
 
+For a new product or startup, [`06-product-process-for-pmf.md`](06-product-process-for-pmf.md) ties phases 1-3 together: the eight-step process from insight to validated PMF, build-to-learn vs. build-to-execute, and the financing milestones mapped to each PMF stage.
+
 ---
 
 ## How to choose
