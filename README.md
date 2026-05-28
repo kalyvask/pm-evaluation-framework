@@ -46,6 +46,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Think clearly about reversibility before committing | [`decision-making/risk-and-reversibility.md`](decision-making/risk-and-reversibility.md) |
 | Decide between user research methods (personas vs. JTBD vs. Kano) | [`decision-making/research-methods.md`](decision-making/research-methods.md) |
 | Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
+| Find product-market fit on a new product or startup (posture, not just framework) | [`decision-making/finding-pmf.md`](decision-making/finding-pmf.md) |
 | Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
 | Navigate the user-vs-chooser split in enterprise sales | [`decision-making/user-vs-chooser.md`](decision-making/user-vs-chooser.md) |
@@ -67,6 +68,22 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ---
 
+## If you're finding PMF
+
+The bulk of this repo is calibrated for working PMs at established companies: exec reviews, strategy memos, launch reviews, status updates, dashboards. If you're a founder or an early-stage PM pre-PMF, that calibration is wrong for you. Read these in order instead:
+
+1. **[`decision-making/finding-pmf.md`](decision-making/finding-pmf.md)** — the posture. Why execution doesn't matter pre-PMF, right-and-non-consensus, leap of faith vs. value hypothesis, the canonical distractions list, savor the surprise.
+2. **[`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md)** — the mechanics. What/who/how, validation sequence, MVP types, pivot vs. restart, common failures.
+3. **[`decision-making/customer-interviews.md`](decision-making/customer-interviews.md)** — the technique. Mom Test rules for problem-validation interviews.
+4. **[`frameworks/03-pre-pmf-validation.md`](frameworks/03-pre-pmf-validation.md)** — the measurement. Sean Ellis, 10 happy users, smile curve, ARC framework, GTM checklist.
+5. **[`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) skill** — the operationalization. Walks you through a specific bet end-to-end: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
+
+Most of the rest of this repo (PRD drafting, launch readiness, exec communication) is calibrated for the post-PMF stage. Run the files above first. Most of the post-PMF content is a distraction pre-PMF.
+
+The line between pre-PMF and post-PMF often runs through a single company. A team can have PMF on its core product and be pre-PMF on a new product line being launched alongside. The discipline is different for each. Apply the founder-reading-path above to the pre-PMF line; apply the rest of the repo to the post-PMF line.
+
+---
+
 ## Claude skills
 
 The repo ships with eighteen [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
@@ -80,6 +97,7 @@ Thirteen of them are **reactive** — invoke when you need critique on a specifi
 | **Frame / decide** | [`pm-design-process-router`](.claude/skills/pm-design-process-router/SKILL.md) | You're scoping a feature and need to decide whether it runs through the full Research → PRD → Concept → Detailed → Code pipeline or the Express Lane (verbal sign-off, no Figma). Routes by scope (XS/S/M/L/XL) with moderators for novelty, reversibility, and visibility |
 | **Discover** | [`pm-customer-interview-coach`](.claude/skills/pm-customer-interview-coach/SKILL.md) | You're prepping or debriefing customer interviews and want them stress-tested against the Mom Test rules |
 | **Discover** | [`pm-value-hypothesis-tester`](.claude/skills/pm-value-hypothesis-tester/SKILL.md) | You're about to launch, fundraise, or scale, and you want the underlying what / who / how bet pressure-tested |
+| **Found / Pre-PMF** | [`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) | You're pre-PMF and want to be walked through finding it: surface the leap of faith → build the value hypothesis → design the smallest falsifying experiment → interpret the result → pivot the who, pivot the how, or restart the what → distractions check |
 | **Build** | [`pm-prd-drafter`](.claude/skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
 | **Build / Review** | [`pm-design-critic`](.claude/skills/pm-design-critic/SKILL.md) | You have a PRD or design spec drafted and want the user-facing surface critiqued against behavioral and UX principles (defaults, friction, choice architecture, AI surfaces) |
 | **Build / Review** | [`pm-persona-stress-tester`](.claude/skills/pm-persona-stress-tester/SKILL.md) | You have a design or flow and want it walked through step-by-step from a specific persona's point of view — what they see, think, expect, and where they bounce. 10-minute usability audit before scheduling real user research |
