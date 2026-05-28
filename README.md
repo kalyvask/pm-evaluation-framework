@@ -58,6 +58,8 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Critique an activation or conversion funnel against the right model | [`decision-making/conversion.md`](decision-making/conversion.md) |
 | Review the user-facing design layer of a PRD or feature | [`decision-making/behavioral-design.md`](decision-making/behavioral-design.md) |
 | Put AI into a product without bolting on a chatbot | [`decision-making/ai-integration.md`](decision-making/ai-integration.md) |
+| Use AI well as a working PM (prompt principles, anti-patterns, AI/human decision matrix, hallucination handling) | [`decision-making/ai-craft-for-pms.md`](decision-making/ai-craft-for-pms.md) |
+| Reusable AI prompts for common PM artifacts (interviews, PRDs, PR/FAQ, competitive monitoring) | [`templates/pm-prompt-library.md`](templates/pm-prompt-library.md) |
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
 | Run a launch where some failure is expected | [`cross-functional/failure-management.md`](cross-functional/failure-management.md) |
 | Understand how AI is changing the PM role | [`ai-and-pm.md`](ai-and-pm.md) |
