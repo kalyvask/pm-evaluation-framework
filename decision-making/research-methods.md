@@ -126,6 +126,63 @@ UXR signals that pass these stress tests are usable as decision inputs. Signals 
 
 ---
 
+## Right-sizing exploration to stakes
+
+The most common research-scope failure: the default scope (often "talk to 30 users and synthesize") that gets applied regardless of the question.
+
+The right scope is a function of the cost of being wrong, not of how thorough the PM wants to feel. Reversible software two-way doors justify smaller samples and faster iteration. Hardware, public commitments, brand-defining promises, and one-way doors justify larger samples and more upfront validation.
+
+A rough calibration:
+
+| Stakes | Reversibility | Right-sized exploration |
+|---|---|---|
+| Small reversible (a feature in a fast-iterating product) | Two-way | 3-5 users, iterate weekly |
+| Medium reversible (a major feature, a market launch) | Two-way | 8-15 users, segmented by hypothesis |
+| Large reversible (a strategic redirect inside the same market) | Two-way with cost | 20-40 users, both qualitative and quantitative |
+| Irreversible / expensive (hardware, public API, brand-defining promise, multi-year platform) | One-way | 50+ users, longitudinal, plus structural validation |
+
+The PM who always wants 300 users before any decision over-validates and slows the team. The PM who always wants 3 under-validates and gets it wrong on the bets where being wrong is expensive. The discipline is to *name the stakes explicitly* before picking the scope.
+
+Two specific traps:
+
+- **Hedging by sample size.** When the team is uncertain about the bet, the PM proposes more research to defer the decision. More research often produces no clearer answer; the team needs a sharper hypothesis, not more data. A useful test: if the same study at half the sample would produce the same conclusion, the sample is too large.
+- **Under-validating one-way doors.** Reversibility is the most underweighted variable in research-scope decisions. A decision that is hard to walk back deserves disproportionate research, even if it feels slow. The cost of slow validation is much smaller than the cost of an irrecoverable wrong bet.
+
+Before approving a research plan, ask the team to name (a) the falsifying outcome that would change the decision, and (b) the reversibility of the underlying bet. If the answers aren't both crisp, the scope is being chosen by anxiety rather than by stakes.
+
+See [`risk-and-reversibility.md`](risk-and-reversibility.md) for the underlying reversibility framing.
+
+---
+
+## Map the full journey, not just your surface
+
+A common research blind spot: studying only the surface you own. PMs map the funnel inside their product and miss that the drop-off is being driven by something seven steps upstream, where users came from, what they were doing before, what they expect.
+
+The discipline is to map the *full* user journey, even the parts you don't control.
+
+The upstream questions:
+
+- Where are users when they first decide they need a product like yours? Search, a competitor, a friend, a TV show, a job change.
+- What were they doing before? A manual workaround, a different product, nothing.
+- What expectations do they arrive with from the upstream experience?
+
+The downstream questions:
+
+- Where do they go after using your product? A downstream tool, a meeting, a purchase, a share.
+- What is the next decision they have to make, and does your product set them up to make it well?
+- Do they tell anyone? Who? In what context?
+
+The reason this matters: most PM funnel analysis treats users as if they appear at the signup screen with no history and disappear when they close the tab. Real user behavior is conditioned by a long chain of context the funnel can't see. When activation rates collapse without an obvious cause, the cause is often outside the funnel.
+
+Two practical patterns:
+
+- **The "what were you doing before you opened our product?" interview question.** Run it on five users. The answer often surprises the team and reveals an upstream assumption no one had named.
+- **The "who do you tell about this?" question.** When users churn, ask not just why they churned but what they replaced it with. The substitution pattern often points at a different competitive frame than the team had assumed.
+
+A useful default: any time the funnel data is producing answers that don't match the team's mental model, the model is missing something upstream or downstream of the surface. Map the missing parts before designing the next experiment.
+
+---
+
 ## Decision checklist
 
 Before committing to a research-driven product decision:

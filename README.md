@@ -66,6 +66,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 | Run a launch where some failure is expected | [`cross-functional/failure-management.md`](cross-functional/failure-management.md) |
 | Understand what separates a good PM from an average one | [`what-makes-a-good-pm.md`](what-makes-a-good-pm.md) |
 | Understand how AI is changing the PM role | [`ai-and-pm.md`](ai-and-pm.md) |
+| Manage your PM career deliberately (networking, getting into the room, performing in interviews, internal moves) | [`pm-career-craft.md`](pm-career-craft.md) |
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |

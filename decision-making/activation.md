@@ -129,6 +129,26 @@ The cold-start problem cannot be designed away with onboarding alone. It needs a
 
 ---
 
+## The day-1 / day-10 / day-30 sticky-moment tension
+
+The aha moment lives at a specific point in the user's journey. For most products it's much later than day 1. That distance creates a sequencing problem most teams under-handle.
+
+A common failure: optimizing for day 1 alone. The PM focuses on signup conversion, time to first action, and the smoothness of onboarding. These metrics improve. But the features that produce *word of mouth* and *durable retention* often hit later, at day 10, day 30, or first collaboration. If the day-10 sticky moment is broken or non-existent, every day-1 optimization is just decorating a leaky funnel.
+
+The opposite failure: optimizing for the day-10 moment alone. The team builds the killer collaboration feature, the depth-of-use capability, the network effect mechanic. Most users don't survive day 2 to discover it.
+
+The sequencing discipline:
+
+- **Day 1 is a survival metric.** The job of day 1 is to not lose the user before they can reach the sticky moment. Optimize for "they reach day 2 still engaged," not "they have already discovered the full value."
+- **Day 10 is a love metric.** The job of day 10 is to deliver the moment that produces word of mouth. Optimize for the depth feature, the collaboration unlock, or the network effect: the thing that turns a user into an advocate.
+- **Day 30 is a habit metric.** By day 30, the question is whether usage has become muscle memory. Optimize for the prompt, the workflow integration, or the recurring trigger that makes the product part of the user's routine.
+
+The trade-off is real: day-1-only optimization buys retention to nowhere; day-10-only optimization builds love that no one feels. The discipline is to know which moment each feature serves and resist the temptation to treat any one of them as the whole game.
+
+A useful diagnostic: pick a feature in your backlog. Ask: which day does this hit? If the team can't agree (some say day 1, some say day 10), the feature is probably under-scoped. Split it.
+
+---
+
 ## Diagnostic checklist
 
 Before claiming the activation experience is good:
