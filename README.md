@@ -43,6 +43,7 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 |---|---|
 | Pick the right framework for the decision in front of you | [`frameworks/00-overview.md`](frameworks/00-overview.md) |
 | Sharpen how you frame a problem before jumping to solutions | [`decision-making/problem-framing.md`](decision-making/problem-framing.md) |
+| Reason from first principles without overusing it (when, on which axes, at what cost, with which network calls) | [`decision-making/first-principles-thinking.md`](decision-making/first-principles-thinking.md) |
 | Think clearly about reversibility before committing | [`decision-making/risk-and-reversibility.md`](decision-making/risk-and-reversibility.md) |
 | Decide between user research methods (personas vs. JTBD vs. Kano) | [`decision-making/research-methods.md`](decision-making/research-methods.md) |
 | Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
