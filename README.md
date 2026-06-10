@@ -10,6 +10,8 @@ The material covers the full lifecycle, from framing a problem and running custo
 
 The repo organizes around one question: **what does a good PM actually do at each stage of the work, and how do we know?** The [five evaluation criteria](#the-five-evaluation-criteria) below answer it. Everything else (frameworks, decision-making docs, cross-functional traps, rubrics, templates, skills) feeds those five.
 
+For recent additions, see [`CHANGELOG.md`](CHANGELOG.md).
+
 ---
 
 ## Personalize this for your own use
@@ -39,44 +41,87 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 ## How to use this repo
 
+Organized by where you are in the product cycle. Pick the section that matches what you're doing right now.
+
+### Frame & Decide
+
 | If you want to... | Start here |
 |---|---|
 | Pick the right framework for the decision in front of you | [`frameworks/00-overview.md`](frameworks/00-overview.md) |
 | Sharpen how you frame a problem before jumping to solutions | [`decision-making/problem-framing.md`](decision-making/problem-framing.md) |
-| Reason from first principles without overusing it (when, on which axes, at what cost, with which network calls) | [`decision-making/first-principles-thinking.md`](decision-making/first-principles-thinking.md) |
+| Reason from first principles without overusing it | [`decision-making/first-principles-thinking.md`](decision-making/first-principles-thinking.md) |
 | Think clearly about reversibility before committing | [`decision-making/risk-and-reversibility.md`](decision-making/risk-and-reversibility.md) |
+
+### Discover & Validate
+
+| If you want to... | Start here |
+|---|---|
 | Decide between user research methods (personas vs. JTBD vs. Kano) | [`decision-making/research-methods.md`](decision-making/research-methods.md) |
 | Run a customer-discovery interview that actually produces signal | [`decision-making/customer-interviews.md`](decision-making/customer-interviews.md) |
+| Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Find product-market fit on a new product or startup (posture, not just framework) | [`decision-making/finding-pmf.md`](decision-making/finding-pmf.md) |
 | Implement an explicit new-product process that maximizes the probability of PMF | [`frameworks/06-product-process-for-pmf.md`](frameworks/06-product-process-for-pmf.md) |
-| Stress-test the value hypothesis behind a product before committing | [`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md) |
 | Argue defensibility honestly — which moat, with what evidence | [`decision-making/competitive-moat.md`](decision-making/competitive-moat.md) |
-| Sharpen positioning and the value proposition | [`decision-making/positioning-and-value-prop.md`](decision-making/positioning-and-value-prop.md) |
 | Navigate the user-vs-chooser split in enterprise sales | [`decision-making/user-vs-chooser.md`](decision-making/user-vs-chooser.md) |
-| Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
+
+### Build & Ship
+
+| If you want to... | Start here |
+|---|---|
+| Use a PRD / decision-memo / decision-log / postmortem template | [`templates/`](templates/) |
+| Review the user-facing design layer of a PRD or feature | [`decision-making/behavioral-design.md`](decision-making/behavioral-design.md) |
+| Put AI into a product without bolting on a chatbot | [`decision-making/ai-integration.md`](decision-making/ai-integration.md) |
+| Sharpen positioning and the value proposition | [`decision-making/positioning-and-value-prop.md`](decision-making/positioning-and-value-prop.md) |
+
+### Measure & Grow
+
+| If you want to... | Start here |
+|---|---|
 | Prioritize a backlog | [`decision-making/prioritization.md`](decision-making/prioritization.md) |
 | Define what to measure | [`decision-making/metrics.md`](decision-making/metrics.md) |
 | Identify the aha moment and design the path to it | [`decision-making/activation.md`](decision-making/activation.md) |
 | Critique an activation or conversion funnel against the right model | [`decision-making/conversion.md`](decision-making/conversion.md) |
-| Review the user-facing design layer of a PRD or feature | [`decision-making/behavioral-design.md`](decision-making/behavioral-design.md) |
-| Put AI into a product without bolting on a chatbot | [`decision-making/ai-integration.md`](decision-making/ai-integration.md) |
-| Use AI well as a working PM (prompt principles, anti-patterns, AI/human decision matrix, hallucination handling) | [`decision-making/ai-craft-for-pms.md`](decision-making/ai-craft-for-pms.md) |
-| Reusable AI prompts for common PM artifacts (interviews, PRDs, PR/FAQ, competitive monitoring) | [`templates/pm-prompt-library.md`](templates/pm-prompt-library.md) |
+
+### Cross-functional
+
+| If you want to... | Start here |
+|---|---|
 | Work better with engineering | [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md) |
 | Align stakeholders before a decision goes up the chain | [`cross-functional/stakeholder-alignment.md`](cross-functional/stakeholder-alignment.md) |
 | Run a launch where some failure is expected | [`cross-functional/failure-management.md`](cross-functional/failure-management.md) |
-| Understand what separates a good PM from an average one | [`what-makes-a-good-pm.md`](what-makes-a-good-pm.md) |
+
+### AI and the PM
+
+| If you want to... | Start here |
+|---|---|
 | Understand how AI is changing the PM role | [`ai-and-pm.md`](ai-and-pm.md) |
+| Use AI well as a working PM (prompt principles, anti-patterns, hallucination handling) | [`decision-making/ai-craft-for-pms.md`](decision-making/ai-craft-for-pms.md) |
+| Reusable AI prompts for common PM artifacts (interviews, PRDs, PR/FAQ, competitive monitoring) | [`templates/pm-prompt-library.md`](templates/pm-prompt-library.md) |
+
+### PM craft and career
+
+| If you want to... | Start here |
+|---|---|
+| Understand what separates a good PM from an average one | [`what-makes-a-good-pm.md`](what-makes-a-good-pm.md) |
 | Manage your PM career deliberately (networking, getting into the room, performing in interviews, internal moves) | [`what-makes-a-good-pm.md`](what-makes-a-good-pm.md) § Career craft |
+
+### Rubrics, review, and operate
+
+| If you want to... | Start here |
+|---|---|
+| Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |
-| Use a PRD / decision-memo / decision-log / postmortem template | [`templates/`](templates/) |
 | Turn the framework into a daily PM agent partner (morning briefs, meeting prep, weekly review) | [Operate-stage setup](#operate-stage-setup-the-agent-partner-layer) |
 
 ---
 
-## If you're finding PMF
+## Reading paths
+
+Three reading paths depending on where you are. The "How to use this repo" table above is the lookup layer; the paths below are the linear-reading layer.
+
+### If you're finding PMF
 
 The bulk of this repo is calibrated for working PMs at established companies: exec reviews, strategy memos, launch reviews, status updates, dashboards. If you're a founder or an early-stage PM pre-PMF, that calibration is wrong for you. Read these in order instead:
 
@@ -90,6 +135,32 @@ The bulk of this repo is calibrated for working PMs at established companies: ex
 Most of the rest of this repo (PRD drafting, launch readiness, exec communication) is calibrated for the post-PMF stage. Run the files above first. Most of the post-PMF content is a distraction pre-PMF.
 
 The line between pre-PMF and post-PMF often runs through a single company. A team can have PMF on its core product and be pre-PMF on a new product line being launched alongside. The discipline is different for each. Apply the founder-reading-path above to the pre-PMF line; apply the rest of the repo to the post-PMF line.
+
+### If you're a working PM at a fast-growing company
+
+The default audience for this repo. The most load-bearing files for the daily work:
+
+1. **[`what-makes-a-good-pm.md`](what-makes-a-good-pm.md)** — the posture. What separates a good PM from average, plus the career-craft section for navigating internal moves and the next role.
+2. **[`decision-making/problem-framing.md`](decision-making/problem-framing.md)** — sharpen problem statements before any PRD; the most common failure mode of working-PM artifacts.
+3. **[`decision-making/prioritization.md`](decision-making/prioritization.md)** — the prioritization frameworks plus the override-axis sequencing for when user-demand ranking is wrong.
+4. **[`decision-making/metrics.md`](decision-making/metrics.md)** plus **[`decision-making/activation.md`](decision-making/activation.md)** — what to measure and how to instrument the path to aha, including the day-1 / day-10 / day-30 sticky-moment tension.
+5. **[`pm-progress-auditor`](.claude/skills/pm-progress-auditor/SKILL.md) skill** — audit every status update for credibility leaks before sending. Goodwill is a finite budget.
+6. **[`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill** — adversarial second pass on any high-stakes artifact heading up the chain.
+
+For non-trivial cross-functional moments, also read [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md), [`cross-functional/stakeholder-alignment.md`](cross-functional/stakeholder-alignment.md), and [`cross-functional/failure-management.md`](cross-functional/failure-management.md).
+
+### If you're prepping for AI PM interviews
+
+The most directly relevant files for AI PM interview preparation:
+
+1. **[`ai-and-pm.md`](ai-and-pm.md)** — how AI is changing what PMs are hired for. Evals replace the PRD; ship-to-learn criteria; PMs read raw feedback themselves.
+2. **[`decision-making/ai-integration.md`](decision-making/ai-integration.md)** — designing AI surfaces in products (shape, confidence, override, fallback, model-invisibility).
+3. **[`decision-making/ai-craft-for-pms.md`](decision-making/ai-craft-for-pms.md)** — how PMs personally use AI well: prompt principles, anti-patterns, AI/human decision matrix, hallucination handling.
+4. **[`decision-making/first-principles-thinking.md`](decision-making/first-principles-thinking.md)** — the working-PM use of first principles, calibrated to prevent over-application. Useful framing when interviewers probe "how would you approach this."
+5. **[`decision-making/research-methods.md`](decision-making/research-methods.md)** § "Right-sizing exploration to stakes" — the high-agency answer to research-scope questions in case interviews.
+6. **[`what-makes-a-good-pm.md`](what-makes-a-good-pm.md)** § "Career craft" — networking, three interview signals (communication / agency / authentic enthusiasm), company-over-title strategy.
+
+The skills `pm-pmf-coach`, `pm-progress-auditor`, and `pm-red-team` are also worth invoking on mock-interview answers to pressure-test them before the real round.
 
 ---
 

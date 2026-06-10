@@ -99,3 +99,13 @@ Before applying first-principles reasoning to a product decision:
 5. **Have I partitioned the decision?** Which sub-problems are genuinely novel; which are solved elsewhere and should be borrowed.
 
 If three of these are weak, the first-principles approach is probably premature. Borrow the pattern, ship, learn, and earn the right to reason from scratch on the next round.
+
+---
+
+## Related
+
+- [`problem-framing.md`](problem-framing.md) — how to write the problem statement that first-principles reasoning then attacks. Get the problem clean before deciding whether to think from scratch.
+- [`risk-and-reversibility.md`](risk-and-reversibility.md) — two-way vs. one-way doors. The reversibility of the decision shapes how much first-principles work is justified.
+- [`value-hypothesis.md`](value-hypothesis.md) — when the entire bet rests on an inflection point and a leap of faith, first-principles is unavoidable. When it doesn't, borrow the pattern.
+- [`finding-pmf.md`](finding-pmf.md) § "Right and non-consensus" — the strategic frame for when first-principles produces asymmetric returns vs. when it doesn't.
+- [`ai-craft-for-pms.md`](ai-craft-for-pms.md) — relevant for the partition step: AI is increasingly useful for the "solved sub-problems" research that you would otherwise do via network calls.

@@ -132,3 +132,12 @@ Before committing to a major decision:
 7. **For regulated/hardware decisions:** has the rigor matched the irreversibility?
 
 If you can't answer all of these, you're not ready to commit.
+
+---
+
+## Related
+
+- [`problem-framing.md`](problem-framing.md) — the framing depth should scale with the reversibility of the decision. One-way doors deserve much more upfront framing than two-way doors.
+- [`first-principles-thinking.md`](first-principles-thinking.md) — reversibility is one of the conditions that justifies (or doesn't) reasoning from scratch. Two-way doors can usually borrow the pattern; one-way doors deserve more original thought.
+- [`prioritization.md`](prioritization.md) — concentration after signal, plus the override-axis sequencing. Reversibility is a load-bearing axis when prioritizing.
+- [`value-hypothesis.md`](value-hypothesis.md) — the kill criterion belongs to the value hypothesis; reversibility shapes how aggressive the pre-commitment should be.

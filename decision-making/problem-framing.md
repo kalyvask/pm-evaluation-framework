@@ -146,3 +146,11 @@ The discipline: when AI is in your design loop, *use it for breadth, not for dir
 > *What is the question the existing category has stopped asking?*
 
 If you cannot answer that, you don't have the car. You have a slightly better horse. See [`decision-making/ai-integration.md`](ai-integration.md) for how this shows up at the product surface and [`ai-and-pm.md`](../ai-and-pm.md) for the broader role-level implications.
+
+---
+
+## Related
+
+- [`first-principles-thinking.md`](first-principles-thinking.md) — once the problem is framed, when to actually reason about it from scratch vs. when to borrow the established pattern. Most PM artifacts under-do problem-framing; some over-do first-principles afterward.
+- [`risk-and-reversibility.md`](risk-and-reversibility.md) — the framing depth should scale with the reversibility of the decision. One-way doors deserve much more upfront framing than two-way doors.
+- [`value-hypothesis.md`](value-hypothesis.md) — the problem statement is the input to the value hypothesis (what / who / how). A weak problem produces a weak hypothesis.
