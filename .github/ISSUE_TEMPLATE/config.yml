@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussion / open-ended question
+    url: https://github.com/kalyvask/pm-evaluation-framework/discussions
+    about: For open-ended questions, broader feedback, or "how do you handle X?" use Discussions instead of an Issue.
