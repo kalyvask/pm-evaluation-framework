@@ -22,6 +22,8 @@ For any AI feature, the first question is the shape, not the model. Three common
 
 Most AI features in mainstream products belong inside the flow or in the background. Chatbots are over-applied because they are easy to ship, not because they are usually the right shape.
 
+The same holds for agents, where the sharpest version of the rule is that chat is better as a *session log and a guardrail* than as the primary method of interaction — the agent's controls and approvals belong next to the object it's shaping. See [`agentic-product-design.md`](agentic-product-design.md) § "Don't underestimate the interface."
+
 **Evaluation question:** for this AI feature, is the chosen shape the one that best serves the user's moment, or the one that's easiest to ship?
 
 ---

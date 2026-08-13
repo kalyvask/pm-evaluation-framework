@@ -64,6 +64,8 @@ The checklist above is for AI that produces an output the user then applies. If 
 - **Permissions:** does the agent inherit an existing permission model, or has the design invented a second one that will drift from the first?
 - **Stakes routing:** which moments go straight to a human? Routing should be by the emotional and consequential weight of the moment, not by action type.
 - **Constraint spec:** does the doc enumerate screens (a flow spec for a system that has no fixed flows) or the rules that hold across any path the agent takes?
+- **Approval placement:** does the approval sit next to the object being changed, or in a separate queue/console/chat panel? A detached approval queue gets rubber-stamped — that's the compliance artifact without the compliance.
+- **Valued friction:** is a step being automated away that the user actually enjoys doing? Time-saved metrics structurally can't detect this regression.
 
 ### 4. Find three load-bearing design holes
 

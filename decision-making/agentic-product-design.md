@@ -53,6 +53,8 @@ Superhuman hit this while building Go, an assistant that orchestrates a team of 
 
 The transferable point is not "add a mascot." It's that an agent's persona sets the user's expectation of its competence and its authority, and an expectation set too high is a trust liability when the agent is wrong. Decide it deliberately, early, and write it into the same rule set as the behavioral constraints.
 
+Identity also does organizing work once there's more than one agent. Sheta Chatterjee's team gives each agent an identity so that interacting with it feels like messaging a coworker rather than issuing commands to a system: *"It gets complex if you have hundreds and hundreds of agents, but I like to bring it back to how we work in real life."* Named agents with legible remits are a mental model users already have — you know who to send what to, and who to check.
+
 **Evaluation question:** what does this agent's persona imply about how much the user should trust it — and does that match how good it actually is?
 
 ---
@@ -129,6 +131,10 @@ The routing decision is about the emotional and consequential weight of the mome
 
 **4. Grant autonomy on a track record.** Autonomy is not a launch setting; it's earned per capability as the agent demonstrates reliability on that capability. Ship the gated version, measure the approval-override rate, and widen the gate where the override rate is near zero. A high override rate is the signal to keep the gate — or to reconsider whether that task should have been delegated at all.
 
+The useful mental model here is onboarding, not configuration. Sheta compares building trust with an agent to onboarding a team member: a new hire doesn't have enough context to work autonomously yet, and neither does a new agent. Gemini Enterprise is deliberately designed to start with **more checkpoints and approvals than it may ultimately need**, then expand an agent's autonomy as the relationship proves itself in practice.
+
+That over-gating is intentional, and it's the opposite of the usual instinct — teams tend to launch at the autonomy level they hope to reach and walk it back after an incident. Walking autonomy back is expensive in trust; walking it forward is free. Start tighter than you think you need and let the data open it.
+
 Deidre's prompt to teams is the useful planning exercise: *"Push yourself to identify the high-anxiety experiences you own today, and ask what it would look like to make trust an explicit product requirement."*
 
 **Evaluation question:** which line in this plan is the trust work? If trust isn't scoped and staffed, it isn't a requirement — it's a hope.
@@ -137,13 +143,50 @@ Deidre's prompt to teams is the useful planning exercise: *"Push yourself to ide
 
 ## Lean on familiar patterns
 
-AI is moving fast enough that users barely build a mental model for one capability before the next arrives. An unfamiliar interface layered on top of an unfamiliar capability compounds the problem: the user is now learning what the thing does *and* how to operate it at the same time.
+AI is moving fast enough that users barely build a mental model for one capability before the next arrives. Add an unfamiliar interface on top and you're asking users to trust something they don't yet understand — they're learning what the thing does *and* how to operate it at the same time.
 
-The design move is to spend novelty where it buys something. Novel capability, familiar container. A user who already understands inboxes, documents, review queues, comment threads, and version history can bring that model to an agent that works inside those objects. The same agent behind a bespoke interaction paradigm has to teach both.
+The design move is to spend novelty where it buys something. Novel capability, familiar container. A user who already understands inboxes, documents, review queues, comment threads, and version history can bring that model to an agent that works inside those objects.
+
+Gemini Enterprise's Inbox feature is the worked example: Sheta's team took the familiar patterns of email and brought them into an agentic workflow. Users star tasks, label them, and see what's most pressing, much as they would in Gmail. *"It's really leaning into the familiar to give people that sense of predictability when the technology is changing so fast."* Predictability is the operative word — the pattern isn't there to save learning time, it's there to make an unpredictable system feel bounded.
 
 This is also the cheapest source of the trust mechanisms above: existing patterns already carry undo, approval, attribution, and permissions. Reuse the pattern and you inherit the affordances.
 
 **Evaluation question:** what's the novel thing in this design? If both the capability and the interface are novel, cut the interface novelty.
+
+---
+
+## Don't underestimate the interface
+
+As agents take on more of the work, a tempting conclusion follows: software that acts on its own doesn't need much of an interface. The UI becomes scaffolding — friction to strip away as automation improves.
+
+Two arguments against, and they're different arguments.
+
+**Some friction is the product.** Rachel Been's team treats trip planning — wading through social media to pick a destination, sifting through a family member's spreadsheet — as part of the experience, not overhead to eliminate. *"There's actually a lot of social psychology that shows that anticipatory state generates way more happiness than the travel itself; so the elimination of that interface, that visual medium, actually eliminates a lot of the happiness of travel."* Her framing of the general question: *"This question about whether interfaces will exist is a question about humanity."*
+
+The PM version of this is concrete: before automating a step, ask whether the user *values* doing it. Automating away the part someone enjoys is a real product regression that shows up in retention and never shows up in a time-saved metric. The time-saved framing is the trap — it can only score removal as a win.
+
+**Chat is a log, not a front door.** [`ai-integration.md`](ai-integration.md) § "The shape question" argues most AI features belong inside the flow rather than in a chatbot. That holds for agents, and the sharpest formulation comes from Charlie Sutton, Chief Design Officer at Atlassian, whose team builds agent interactions directly into the existing interfaces of Jira and Confluence rather than into a separate chat or panel. Chat, he says, works better as *"a session log and a guardrail, rather than the primary method of interaction."*
+
+The consequence for the trust mechanisms above is specific and load-bearing: **approvals and yes-or-no decisions sit right next to the object the agent is shaping**, keeping people in their existing flow instead of pulling them into a new one. An approval queue in a separate surface is where approvals go to be rubber-stamped — the reviewer has lost the context that would let them catch the problem. Put the gate on the object and the review is real.
+
+**Evaluation question:** where does the user approve the agent's work — next to the thing being changed, or in a separate console? And what is chat doing in this product: carrying the interaction, or recording it?
+
+---
+
+## You can't script it perfectly — ship to learn
+
+The last structural difference from feature work. A feature can be validated internally to a high standard before release: you know the states, you can test them. An agent's behavior distribution only exists once real people use it on real situations, so internal testing has a ceiling that arrives well before confidence does.
+
+Rachel's team at Expedia releases agents before they're ready and uses real data and feedback to build better versions over time: *"You need to learn a lot through actual usage and execution. You're not going to launch something that's perfect on day one, because that's not how building agents works."* No amount of internal testing gets the full picture of what's effective, where an agent gets stuck, and when users drop off. Her conclusion is the through-line of this whole file: **you can't script an agent perfectly — you can only build the conditions for it to get better.**
+
+Two cautions before this becomes a license to ship anything:
+
+- **"Before it's ready" is a statement about polish, not about safety.** The gates in the trust section are what make early release survivable. Ship early behind approval gates, with attribution and rollback in place; that's an entirely different act from shipping early with autonomy.
+- **Where the cost of a bad output is borne by someone other than the user** — regulated, financial, medical, safety-adjacent — the equivalent of "release early" is a small supervised cohort with full observability, not general availability. The learning loop is the same shape; the blast radius isn't.
+
+The planning implication is that an agentic launch is not a date, it's the start of an instrumented loop. If the roadmap has the agent shipping and the team moving on, the roadmap is wrong: budget the post-launch refinement cycle up front, and instrument for where the agent gets stuck and where users drop off before launch, not after you need the data.
+
+**Evaluation question:** what will this product learn from its first 30 days of real usage that no internal test could produce — and is the instrumentation to capture it built before launch?
 
 ---
 
@@ -159,8 +202,11 @@ Run this alongside the [AI integration checklist](ai-integration.md#the-ai-integ
 6. **Permissions:** does the agent inherit an existing permission model rather than introducing a second one?
 7. **Produce vs. publish:** is there a human approval gate at every point where the agent's work reaches someone other than its user?
 8. **Stakes routing:** which moments go straight to a human, chosen by emotional and consequential weight rather than by action type?
-9. **Autonomy ladder:** what does the agent have to demonstrate, on what metric, to earn a wider gate? Is the override rate instrumented?
+9. **Autonomy ladder:** does the product launch with *more* checkpoints than it will ultimately need? What does the agent have to demonstrate, on what metric, to earn a wider gate? Is the override rate instrumented?
 10. **Familiar patterns:** is the novelty in the capability rather than the interface?
+11. **Approval placement:** do approvals sit next to the object the agent is shaping, rather than in a separate queue or chat panel?
+12. **Valued friction:** is any step being automated away that the user actually enjoys doing? Time-saved metrics can't detect this.
+13. **Learning loop:** is the instrumentation for where the agent gets stuck and where users drop off built before launch, and is post-launch refinement budgeted?
 
 If items 3, 5, or 7 are weak, the product isn't ready for autonomy regardless of how good the model is. Ship the gated version and widen it on evidence.
 
@@ -187,4 +233,4 @@ Don't use this file when:
 
 ## Sources
 
-Practitioner quotes and examples in this file are drawn from Figma's *Writing the rules of agentic design*, which collects field practice from Rachel Been (SVP of Design, Expedia), Thomas Vidal (VP of Product Design, Accor), Sheta Chatterjee (Head of UX for Cloud AI, Google), Deidre Kolarick (Managing VP and Head of Design for Bank, Business, and Card, Capital One), and Collin Whitehead (VP of Design, Superhuman), plus the Atlassian permission-inheritance pattern. The synthesis into evaluation questions and the checklist is this repo's.
+Practitioner quotes and examples in this file are drawn from Figma's *Writing the rules of agentic design*, which collects field practice from Rachel Been (SVP of Design, Expedia), Thomas Vidal (VP of Product Design, Accor), Sheta Chatterjee (Head of UX for Cloud AI, Google), Deidre Kolarick (Managing VP and Head of Design for Bank, Business, and Card, Capital One), and Collin Whitehead (VP of Design, Superhuman), and Charlie Sutton (Chief Design Officer, Atlassian), plus the Atlassian permission-inheritance pattern. The synthesis into evaluation questions and the checklist is this repo's.
