@@ -71,6 +71,7 @@ Organized by where you are in the product cycle. Pick the section that matches w
 | Use a PRD / decision-memo / decision-log / postmortem template | [`templates/`](templates/) |
 | Review the user-facing design layer of a PRD or feature | [`decision-making/behavioral-design.md`](decision-making/behavioral-design.md) |
 | Put AI into a product without bolting on a chatbot | [`decision-making/ai-integration.md`](decision-making/ai-integration.md) |
+| Design a product that *acts* on the user's behalf (attribution, transparency, trust gates, autonomy) | [`decision-making/agentic-product-design.md`](decision-making/agentic-product-design.md) |
 | Sharpen positioning and the value proposition | [`decision-making/positioning-and-value-prop.md`](decision-making/positioning-and-value-prop.md) |
 
 ### Measure & Grow

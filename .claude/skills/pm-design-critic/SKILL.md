@@ -1,6 +1,6 @@
 ---
 name: pm-design-critic
-description: Critically review the user-facing surface of a PRD, design spec, or feature proposal against behavioral and UX principles. Use when a PM has a solution in hand and wants the design layer pressure-tested — defaults, friction placement, choice architecture, information density, AI surface decisions, peak-and-end moments. Distinct from pm-red-team (strategy adversary) and pm-evaluator (rubric scoring); this skill stays at the design layer and asks whether the design works with human cognition or against it. Returns the three load-bearing design holes with specific re-writes.
+description: Critically review the user-facing surface of a PRD, design spec, or feature proposal against behavioral and UX principles. Use when a PM has a solution in hand and wants the design layer pressure-tested — defaults, friction placement, choice architecture, information density, AI surface decisions, agentic surfaces (attribution, approval gates, autonomy), peak-and-end moments. Distinct from pm-red-team (strategy adversary) and pm-evaluator (rubric scoring); this skill stays at the design layer and asks whether the design works with human cognition or against it. Returns the three load-bearing design holes with specific re-writes.
 ---
 
 # PM design critic
@@ -52,6 +52,18 @@ Reference `decision-making/ai-integration.md`. If the design includes AI feature
 - Can the user override the AI's output at the point of decision?
 - What's the fallback when the model is uncertain or fails? "Block the user" is a hole; "category default with a note" is not.
 - Does the user see the model, or only the outcome? Surfacing the model is usually a hole, not a feature.
+
+### 3b. Run the agentic checklist (if the AI *acts*)
+
+The checklist above is for AI that produces an output the user then applies. If the design has the AI taking multi-step actions on the user's behalf, or writing to shared state (sending, updating, committing, publishing), reference `decision-making/agentic-product-design.md` and check these as well — note that the last bullet above inverts, because a user accountable for an agent's work needs to see what it did:
+
+- **Attribution:** for anything the agent touched, can the user see which changes were the agent's versus their own, and reverse exactly those? "Undo the whole session" is not attribution.
+- **Transparency calibration:** is process shown where the user is accountable for the output, and kept out of the way where they just want the outcome resolved? Both over- and under-showing are holes.
+- **Failure visibility:** for each action, can you complete *"the user finds out by ___, fixes it by ___, and the worst case is ___"*? Any action that fails this isn't ready to run unattended.
+- **Produce vs. publish:** is there a human approval gate at every point where the agent's work reaches someone other than its user?
+- **Permissions:** does the agent inherit an existing permission model, or has the design invented a second one that will drift from the first?
+- **Stakes routing:** which moments go straight to a human? Routing should be by the emotional and consequential weight of the moment, not by action type.
+- **Constraint spec:** does the doc enumerate screens (a flow spec for a system that has no fixed flows) or the rules that hold across any path the agent takes?
 
 ### 4. Find three load-bearing design holes
 
