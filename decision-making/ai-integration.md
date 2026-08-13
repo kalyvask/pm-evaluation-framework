@@ -6,6 +6,8 @@ This file is the design discipline for putting AI into a product so that it feel
 
 The frame: AI is a personalization engine that lives *inside* the existing flow as labels, ranges, suggestions, and pre-fills. The user does not see the model. The user sees the outcome.
 
+**Scope note.** This file covers AI that *produces* something the user then acts on — a label, an estimate, a ranked list, a draft. It does not cover AI that *acts*: an agent taking a multi-step sequence on the user's behalf and writing to shared state. Several rules below (notably Rule 4, make the model invisible) invert once the product acts. For that class, read this file first and then [`agentic-product-design.md`](agentic-product-design.md).
+
 ---
 
 ## The shape question
@@ -19,6 +21,8 @@ For any AI feature, the first question is the shape, not the model. Three common
 - **Background.** AI runs invisibly — re-ranking, deduplicating, summarizing, classifying — without surfacing to the user at all. Right when the user wouldn't have a useful opinion on the operation and just wants the result to be better.
 
 Most AI features in mainstream products belong inside the flow or in the background. Chatbots are over-applied because they are easy to ship, not because they are usually the right shape.
+
+The same holds for agents, where the sharpest version of the rule is that chat is better as a *session log and a guardrail* than as the primary method of interaction — the agent's controls and approvals belong next to the object it's shaping. See [`agentic-product-design.md`](agentic-product-design.md) § "Don't underestimate the interface."
 
 **Evaluation question:** for this AI feature, is the chosen shape the one that best serves the user's moment, or the one that's easiest to ship?
 
@@ -61,6 +65,8 @@ The user should see the *outcome*, not the *mechanism*. Phrases like *"our AI th
 The user cares about the dish recommendation, the calorie estimate, the next-action suggestion. The fact that AI produced it is operationally important and presentationally invisible.
 
 The exception: when the user asks how the system arrived at an output, the explanation should be available. But it lives in the affordance for *how this was generated*, not in the headline copy.
+
+The larger exception: this rule holds only while the AI is *producing* an output the user chooses to accept. The moment the AI *acts* — sends, updates, commits, changes shared state — invisibility becomes a liability, because the user is accountable for work they didn't do and can't see. There, the rule reverses into explicit attribution of what the agent did versus what the human did. See [`agentic-product-design.md`](agentic-product-design.md) § "The invisibility rule inverts."
 
 **Evaluation question:** does the AI surface lead with the outcome (the recommendation, the estimate, the suggestion) or with the model? If it leads with the model, rewrite.
 
@@ -151,3 +157,5 @@ Run this before any AI surface is finalized:
 9. **AI vs. static:** would a deterministic rule or curated list produce the same outcome? If yes, why is the AI version worth the cost?
 
 If two or more answers are weak, the AI surface isn't ready. Cut the AI and ship the static version, or close the gaps before launch.
+
+10. **Does it act?** If the AI takes multi-step actions or writes to shared state rather than producing an output the user applies, this checklist is necessary but not sufficient. Run the [agentic design checklist](agentic-product-design.md#the-agentic-design-checklist) as well.

@@ -2,6 +2,15 @@
 
 Notable additions to this repo, newest first. Loosely follows the [Keep a Changelog](https://keepachangelog.com) format.
 
+## 2026-08-13
+
+### Added
+
+- **`decision-making/agentic-product-design.md`** — new doc covering the design discipline for products that *act* rather than suggest. Why the deterministic-design assumption breaks, designing the constraint system instead of the screens, deciding the agent's persona before its scope, the inversion of the model-invisibility rule into explicit human-vs-agent attribution, calibrating transparency to who is accountable for the output, the three properties of visible failure (easy to see / fix / forgive), four trust mechanisms (inherited permissions, produce-vs-publish gate, stakes-based routing, autonomy earned on a measured override rate with deliberate over-gating at launch), familiar patterns, why the interface still matters (valued friction; chat as session log and guardrail rather than primary interaction; approvals next to the object they change), shipping to learn from real usage, and a 13-item agentic design checklist. Sourced from Figma's *Writing the rules of agentic design* (Expedia, Accor, Google, Capital One, Superhuman, Atlassian practice).
+- **`decision-making/ai-integration.md`** — scope note distinguishing produce-then-user-acts AI from agentic AI, an inversion clause on Rule 4 (make the model invisible), an extension of the shape question for agents, and checklist item 10 routing agentic products to the new doc.
+- **`.claude/skills/pm-design-critic/SKILL.md`** — new step 3b, an agentic checklist (attribution, transparency calibration, failure visibility, produce-vs-publish, permissions, stakes routing, constraint spec, approval placement, valued friction) that runs when the design has AI taking actions rather than making suggestions.
+- **`.claude/skills/pm-framework-selector/SKILL.md`** — routing row for agentic product design questions.
+
 ## 2026-06-02
 
 ### Added
