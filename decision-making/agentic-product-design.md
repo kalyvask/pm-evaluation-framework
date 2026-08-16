@@ -59,6 +59,25 @@ Identity also does organizing work once there's more than one agent. Sheta Chatt
 
 ---
 
+## How many agents does the user see?
+
+Teams building multi-agent systems face a question with no default answer: does the internal topology surface to the user?
+
+Take a customer message like *"my order arrived damaged, I was charged twice, and I want this resolved."* To the customer that's one problem. Internally it may take several capabilities — retrieving the order and transaction history, investigating the duplicate charge, applying return policy, choosing a resolution, executing it, verifying the outcome. Those may be one agent or six.
+
+**The customer should still see one conversation and one resolution.** Internal decomposition is an engineering and governance decision — separate permissions, separate evals, separate release cadences — and it is not a mental model the user asked for. A product that exposes its org chart as a hand-off queue ("transferring you to the Billing Agent") has converted an architecture into a user problem, which is the same mistake as exposing the model.
+
+Two exceptions where agent identity genuinely helps the user, both from the sections above:
+
+- **Persistent agents the user delegates to repeatedly** benefit from a name and a legible remit — that's the messaging-a-coworker model, and it works because the user builds a track record with a stable counterpart.
+- **Attribution is by system, not by internal boundary.** The user needs to know *the agent* did this rather than a human, and needs to reverse it. They do not need to know which of your six agents did it. Your trace needs that resolution; the surface doesn't.
+
+The reconciliation, then: decompose internally for whatever reasons make the system easier to govern and evaluate, and let the seam be invisible unless a named agent is something the user actually forms a relationship with.
+
+**Evaluation question:** does the user experience one coherent resolution, or does your internal decomposition leak as hand-offs, repeated context, and shifts in voice?
+
+---
+
 ## The invisibility rule inverts: attribute every action
 
 [`ai-integration.md`](ai-integration.md) Rule 4 says lead with the outcome, not the model. That holds while the AI is producing a suggestion the user chooses to accept. It stops holding the moment the agent changes shared state, because the user is now accountable for work they didn't personally do.
@@ -206,7 +225,8 @@ Run this alongside the [AI integration checklist](ai-integration.md#the-ai-integ
 10. **Familiar patterns:** is the novelty in the capability rather than the interface?
 11. **Approval placement:** do approvals sit next to the object the agent is shaping, rather than in a separate queue or chat panel?
 12. **Valued friction:** is any step being automated away that the user actually enjoys doing? Time-saved metrics can't detect this.
-13. **Learning loop:** is the instrumentation for where the agent gets stuck and where users drop off built before launch, and is post-launch refinement budgeted?
+13. **Topology leakage:** if the system is multi-agent, does the user still get one conversation and one resolution — or do internal hand-offs surface as repeated context and shifts in voice?
+14. **Learning loop:** is the instrumentation for where the agent gets stuck and where users drop off built before launch, and is post-launch refinement budgeted?
 
 If items 3, 5, or 7 are weak, the product isn't ready for autonomy regardless of how good the model is. Ship the gated version and widen it on evidence.
 
