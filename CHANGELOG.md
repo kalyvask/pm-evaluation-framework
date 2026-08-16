@@ -11,6 +11,12 @@ Notable additions to this repo, newest first. Loosely follows the [Keep a Change
 - **`.claude/skills/pm-design-critic/SKILL.md`** — new step 3b, an agentic checklist (attribution, transparency calibration, failure visibility, produce-vs-publish, permissions, stakes routing, constraint spec, approval placement, valued friction) that runs when the design has AI taking actions rather than making suggestions.
 - **`.claude/skills/pm-framework-selector/SKILL.md`** — routing row for agentic product design questions.
 
+## 2026-08-13 (later)
+
+### Added
+
+- **`decision-making/agentic-product-design.md`** — new "How many agents does the user see?" section on whether internal multi-agent topology should surface to the user. Internal decomposition is an engineering and governance decision; the user should still get one conversation and one resolution. Reconciles this with the attribution rule (attribute by system, not by internal boundary) and with named persistent agents. Checklist gains a topology-leakage item (now 14).
+
 ## 2026-06-02
 
 ### Added
