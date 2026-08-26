@@ -6,11 +6,26 @@ The material covers the full lifecycle, from framing a problem and running custo
 
 **Discovery is treated as technique, not philosophy.** The repo includes a Mom-Test customer-interview coach (with the rules behind why "would you use this?" produces fluff and "when's the last time that happened?" produces signal), a Lean-Startup-grounded value-hypothesis stress-tester, and substantive framework docs underneath each. The principles are tactical: what to ask, what to ignore, what counts as evidence.
 
-**Every primary skill chains into an adversarial second pass.** The [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill takes the output of any other skill (or any external AI critique, or your own draft) and re-reviews it under a different lens. Most artifacts that "look fine" do so because the first reviewer applied the comfortable lens. The second pass picks a different one. The point matches a working principle from my chief-of-staff setup: critically evaluate AI output, don't defer to it.
+**Every primary skill chains into an adversarial second pass.** The [`pm-red-team`](skills/pm-red-team/SKILL.md) skill takes the output of any other skill (or any external AI critique, or your own draft) and re-reviews it under a different lens. Most artifacts that "look fine" do so because the first reviewer applied the comfortable lens. The second pass picks a different one. The point matches a working principle from my chief-of-staff setup: critically evaluate AI output, don't defer to it.
 
 The repo organizes around one question: **what does a good PM actually do at each stage of the work, and how do we know?** The [five evaluation criteria](#the-five-evaluation-criteria) below answer it. Everything else (frameworks, decision-making docs, cross-functional traps, rubrics, templates, skills) feeds those five.
 
 For recent additions, see [`CHANGELOG.md`](CHANGELOG.md).
+
+---
+
+## Install
+
+In Claude Code (or Cowork):
+
+```
+/plugin marketplace add kalyvask/pm-evaluation-framework
+/plugin install pm-framework
+```
+
+That installs all twenty-three `pm-*` skills plus the frameworks, rubrics, and templates they cite. Claude auto-triggers them from what you're doing — paste a PRD draft and say *"critique this"* and `pm-prd-drafter` fires, cites the template, and chains into `pm-red-team` for the adversarial second pass. You can also call one by name: `/pm-framework:pm-evaluator`. Skills update when the plugin version bumps.
+
+Prefer editable copies you own? Clone the repo and copy the skill folders instead — see [Personalize this for your own use](#personalize-this-for-your-own-use) below.
 
 ---
 
@@ -20,18 +35,18 @@ If you forked or cloned this repo, do these steps in order. Each one is concrete
 
 1. **Fork the repo and re-clone your fork.** On GitHub, fork `kalyvask/pm-evaluation-framework`, then `git clone git@github.com:<you>/pm-evaluation-framework.git`. Edit [`LICENSE`](LICENSE) to your name and update the intro of this README to reflect your perspective.
 
-2. **Install the Claude skills so they work in every project, not just this repo.** The twenty-three skills under [`.claude/skills/`](.claude/skills/) auto-load when Claude Code is opened *inside this repo*. To make them available everywhere, copy them into your user-level skills directory:
+2. **Install the skills so they work in every project, not just this repo.** Fastest is the plugin (see [Install](#install) above) — it stays up to date and ships the frameworks with it. If you'd rather own editable copies, copy the skill folders into your user-level skills directory instead:
    ```bash
    mkdir -p ~/.claude/skills
-   cp -r .claude/skills/* ~/.claude/skills/
+   cp -r skills/* ~/.claude/skills/
    ```
-   Restart Claude Code. Run `/skills` to confirm the twenty-three `pm-*` skills are listed. If you only want a subset, copy individual skill folders.
+   Restart Claude Code. Run `/skills` to confirm the twenty-three `pm-*` skills are listed. If you only want a subset, copy individual skill folders. Copied skills reference the framework docs through `${CLAUDE_PLUGIN_ROOT}`, which only resolves for the plugin install — point them at your clone (or install the plugin) if you want the citations to open.
 
 3. **Add your own artifact templates.** Put new templates in [`templates/`](templates/) alongside [`prd-template.md`](templates/prd-template.md), [`decision-memo.md`](templates/decision-memo.md), [`decision-log.md`](templates/decision-log.md), [`launch-criteria.md`](templates/launch-criteria.md), and [`blameless-postmortem.md`](templates/blameless-postmortem.md). Match the existing voice (imperative, section-headed, no jargon) so the skills can find and reuse them.
 
 4. **Customize rubric weights and criteria for your team's bar.** The three rubrics in [`rubrics/`](rubrics/) — [`pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md), [`strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md), [`product-review-rubric.md`](rubrics/product-review-rubric.md) — are deliberately editable. Re-weight criteria, add team-specific ones (e.g. "addresses regulated-data path"), or replace the five top-level questions in the [The five evaluation criteria](#the-five-evaluation-criteria) section below. The skills cite these files by path, so they pick up your edits automatically.
 
-5. **Extend or override skills with your own voice and style.** To add a new skill: copy [`SKILL.md.tmpl`](SKILL.md.tmpl) into a new folder under `.claude/skills/<your-skill>/SKILL.md` and fill in the front-matter description (this is what Claude pattern-matches against). To change the voice of an existing skill: edit its `SKILL.md` directly — tighten the prose, add your own anti-patterns, or point it at frameworks you added in steps above.
+5. **Extend or override skills with your own voice and style.** To add a new skill: copy [`SKILL.md.tmpl`](SKILL.md.tmpl) into a new folder under `skills/<your-skill>/SKILL.md` and fill in the front-matter description (this is what Claude pattern-matches against). To change the voice of an existing skill: edit its `SKILL.md` directly — tighten the prose, add your own anti-patterns, or point it at frameworks you added in steps above. To try edits without installing anything, run `claude --plugin-dir .` from the repo root and `/reload-plugins` after each change.
 
 6. **Keep your private material local — it's already gitignored.** [`.gitignore`](.gitignore) already excludes `drafts/`, `local/`, `private/`, `outputs/`, `.cache/`, `*.draft.md`, `*.local.md`, CVs, PDFs, DOCX, and `.env*`. Use these for unredacted notes, in-flight memo drafts, your CV, and any private artifact you want a skill to reason over without committing it. Sanity-check with `git status` before every commit.
 
@@ -110,7 +125,7 @@ Organized by where you are in the product cycle. Pick the section that matches w
 
 | If you want to... | Start here |
 |---|---|
-| Adversarially re-review an existing critique before acting on it | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill |
+| Adversarially re-review an existing critique before acting on it | [`pm-red-team`](skills/pm-red-team/SKILL.md) skill |
 | Evaluate a PM's reasoning on a case | [`rubrics/pm-evaluation-rubric.md`](rubrics/pm-evaluation-rubric.md) |
 | Evaluate a strategy memo before it goes up the chain | [`rubrics/strategy-memo-rubric.md`](rubrics/strategy-memo-rubric.md) |
 | Show up well in a product / exec review | [`rubrics/product-review-rubric.md`](rubrics/product-review-rubric.md) |
@@ -131,7 +146,7 @@ The bulk of this repo is calibrated for working PMs at established companies: ex
 3. **[`decision-making/value-hypothesis.md`](decision-making/value-hypothesis.md)** — the mechanics. What/who/how, validation sequence, MVP types, pivot vs. restart, common failures.
 4. **[`decision-making/customer-interviews.md`](decision-making/customer-interviews.md)** — the technique. Mom Test rules for problem-validation interviews.
 5. **[`frameworks/03-pre-pmf-validation.md`](frameworks/03-pre-pmf-validation.md)** — the measurement. Sean Ellis, 10 happy users, smile curve, ARC framework, GTM checklist.
-6. **[`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) skill** — the operationalization. Walks you through a specific bet end-to-end: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
+6. **[`pm-pmf-coach`](skills/pm-pmf-coach/SKILL.md) skill** — the operationalization. Walks you through a specific bet end-to-end: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
 
 Most of the rest of this repo (PRD drafting, launch readiness, exec communication) is calibrated for the post-PMF stage. Run the files above first. Most of the post-PMF content is a distraction pre-PMF.
 
@@ -145,8 +160,8 @@ The default audience for this repo. The most load-bearing files for the daily wo
 2. **[`decision-making/problem-framing.md`](decision-making/problem-framing.md)** — sharpen problem statements before any PRD; the most common failure mode of working-PM artifacts.
 3. **[`decision-making/prioritization.md`](decision-making/prioritization.md)** — the prioritization frameworks plus the override-axis sequencing for when user-demand ranking is wrong.
 4. **[`decision-making/metrics.md`](decision-making/metrics.md)** plus **[`decision-making/activation.md`](decision-making/activation.md)** — what to measure and how to instrument the path to aha, including the day-1 / day-10 / day-30 sticky-moment tension.
-5. **[`pm-progress-auditor`](.claude/skills/pm-progress-auditor/SKILL.md) skill** — audit every status update for credibility leaks before sending. Goodwill is a finite budget.
-6. **[`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) skill** — adversarial second pass on any high-stakes artifact heading up the chain.
+5. **[`pm-progress-auditor`](skills/pm-progress-auditor/SKILL.md) skill** — audit every status update for credibility leaks before sending. Goodwill is a finite budget.
+6. **[`pm-red-team`](skills/pm-red-team/SKILL.md) skill** — adversarial second pass on any high-stakes artifact heading up the chain.
 
 For non-trivial cross-functional moments, also read [`cross-functional/engineering-partnership.md`](cross-functional/engineering-partnership.md), [`cross-functional/stakeholder-alignment.md`](cross-functional/stakeholder-alignment.md), and [`cross-functional/failure-management.md`](cross-functional/failure-management.md).
 
@@ -167,35 +182,35 @@ The skills `pm-pmf-coach`, `pm-progress-auditor`, and `pm-red-team` are also wor
 
 ## Claude skills
 
-The repo ships with twenty-three [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under `.claude/skills/`. They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
+The repo ships with twenty-three [Claude Code skills](https://docs.claude.com/en/docs/claude-code/skills) under [`skills/`](skills/), packaged as the installable `pm-framework` plugin (see [Install](#install)). They use the frameworks in this repo as their substrate, and they're organized by where you are in the product lifecycle.
 
 Sixteen of them are **reactive** — invoke when you need critique on a specific artifact or decision. The other seven are **operate-stage** skills that turn the framework into a daily PM partner: morning brief, meeting prep, meeting debrief, weekly review, inbox triage, stakeholder tracker, and the context loader they all chain to. The operate-stage skills read from a `pm-state/` folder you maintain (see below).
 
 | Stage | Skill | Use when |
 |---|---|---|
-| **Frame** | [`pm-framework-selector`](.claude/skills/pm-framework-selector/SKILL.md) | You have a decision in front of you and don't know which framework to reach for |
-| **Frame / decide** | [`pm-decision-coach`](.claude/skills/pm-decision-coach/SKILL.md) | You want to be walked through a decision: framing → research → prioritization → risk |
-| **Frame / decide** | [`pm-design-process-router`](.claude/skills/pm-design-process-router/SKILL.md) | You're scoping a feature and need to decide whether it runs through the full Research → PRD → Concept → Detailed → Code pipeline or the Express Lane (verbal sign-off, no Figma). Routes by scope (XS/S/M/L/XL) with moderators for novelty, reversibility, and visibility |
-| **Discover** | [`pm-customer-interview-coach`](.claude/skills/pm-customer-interview-coach/SKILL.md) | You're prepping or debriefing customer interviews and want them stress-tested against the Mom Test rules |
-| **Discover** | [`pm-value-hypothesis-tester`](.claude/skills/pm-value-hypothesis-tester/SKILL.md) | You're about to launch, fundraise, or scale, and you want the underlying what / who / how bet pressure-tested |
-| **Found / Pre-PMF** | [`pm-pmf-coach`](.claude/skills/pm-pmf-coach/SKILL.md) | You're pre-PMF and want to be walked through finding it: surface the leap of faith → build the value hypothesis → design the smallest falsifying experiment → interpret the result → pivot the who, pivot the how, or restart the what → distractions check |
-| **Build** | [`pm-prd-drafter`](.claude/skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
-| **Build / Review** | [`pm-design-critic`](.claude/skills/pm-design-critic/SKILL.md) | You have a PRD or design spec drafted and want the user-facing surface critiqued against behavioral and UX principles (defaults, friction, choice architecture, AI surfaces) |
-| **Build / Review** | [`pm-persona-stress-tester`](.claude/skills/pm-persona-stress-tester/SKILL.md) | You have a design or flow and want it walked through step-by-step from a specific persona's point of view — what they see, think, expect, and where they bounce. 10-minute usability audit before scheduling real user research |
-| **Launch** | [`pm-launch-reviewer`](.claude/skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
-| **Measure** | [`pm-north-star-selector`](.claude/skills/pm-north-star-selector/SKILL.md) | You're picking *one* North Star and weighing simple behavioral (MAU/DAU) vs. value-delivered vs. revenue. Forces the explainability, lead/lag, gameability comparison most teams skip |
-| **Measure** | [`pm-metrics-critic`](.claude/skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
-| **Measure / Grow** | [`pm-funnel-critic`](.claude/skills/pm-funnel-critic/SKILL.md) | You have an activation funnel, conversion funnel, paywall, or trial design and want the funnel-layer logic pressure-tested (binding stage, drop-off driver, model fit) |
-| **Review** | [`pm-progress-auditor`](.claude/skills/pm-progress-auditor/SKILL.md) | You're about to send a status update, exec review, board email, or dashboard callout and want every claim pressure-tested for credibility leaks (overstated verbs, cherry-picked windows, vanity-metric-as-validation, "on track" with no threshold) |
-| **Review** | [`pm-evaluator`](.claude/skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
-| **Challenge** | [`pm-red-team`](.claude/skills/pm-red-team/SKILL.md) | You have an existing critique (from another skill, an external AI, or yourself) and want it adversarially re-reviewed before you act on it |
-| **Operate** | [`pm-context-loader`](.claude/skills/pm-context-loader/SKILL.md) | You're starting a PM workflow and need the agent to load your `pm-state/` (personal style, active projects, stakeholders) before doing anything else. Most operate-stage skills chain to this first. |
-| **Operate** | [`pm-morning-brief`](.claude/skills/pm-morning-brief/SKILL.md) | First thing in the morning. Pulls calendar, inbox, project todos, and yesterday's transcripts; surfaces the top 3 today plus slipped commitments. Writes to `pm-state/inbox/` |
-| **Operate** | [`pm-meeting-prep`](.claude/skills/pm-meeting-prep/SKILL.md) | Before a meeting that matters. Pulls attendees, prior transcripts, project state, stakeholder context; drafts a one-page brief including the question you don't want asked |
-| **Operate** | [`pm-meeting-debrief`](.claude/skills/pm-meeting-debrief/SKILL.md) | Right after a meeting. Extracts commitments and decisions from a Granola transcript, drafts follow-ups, proposes writes to project todos and decisions files |
-| **Operate** | [`pm-inbox-triage`](.claude/skills/pm-inbox-triage/SKILL.md) | When the inbox is backed up. Classifies threads, drafts replies for the substantive ones, surfaces stale threads where you're awaiting or being awaited |
-| **Operate** | [`pm-weekly-review`](.claude/skills/pm-weekly-review/SKILL.md) | Friday afternoon. What got done, what slipped, what's hanging, what to renegotiate. Catches the patterns the daily brief misses |
-| **Operate** | [`pm-stakeholder-tracker`](.claude/skills/pm-stakeholder-tracker/SKILL.md) | Weekly or before any high-stakes push. Who's going cold, who has open commitments hanging, who needs proactive attention |
+| **Frame** | [`pm-framework-selector`](skills/pm-framework-selector/SKILL.md) | You have a decision in front of you and don't know which framework to reach for |
+| **Frame / decide** | [`pm-decision-coach`](skills/pm-decision-coach/SKILL.md) | You want to be walked through a decision: framing → research → prioritization → risk |
+| **Frame / decide** | [`pm-design-process-router`](skills/pm-design-process-router/SKILL.md) | You're scoping a feature and need to decide whether it runs through the full Research → PRD → Concept → Detailed → Code pipeline or the Express Lane (verbal sign-off, no Figma). Routes by scope (XS/S/M/L/XL) with moderators for novelty, reversibility, and visibility |
+| **Discover** | [`pm-customer-interview-coach`](skills/pm-customer-interview-coach/SKILL.md) | You're prepping or debriefing customer interviews and want them stress-tested against the Mom Test rules |
+| **Discover** | [`pm-value-hypothesis-tester`](skills/pm-value-hypothesis-tester/SKILL.md) | You're about to launch, fundraise, or scale, and you want the underlying what / who / how bet pressure-tested |
+| **Found / Pre-PMF** | [`pm-pmf-coach`](skills/pm-pmf-coach/SKILL.md) | You're pre-PMF and want to be walked through finding it: surface the leap of faith → build the value hypothesis → design the smallest falsifying experiment → interpret the result → pivot the who, pivot the how, or restart the what → distractions check |
+| **Build** | [`pm-prd-drafter`](skills/pm-prd-drafter/SKILL.md) | You're starting a PRD, have a draft to critique, or are stuck on problem / success / scope |
+| **Build / Review** | [`pm-design-critic`](skills/pm-design-critic/SKILL.md) | You have a PRD or design spec drafted and want the user-facing surface critiqued against behavioral and UX principles (defaults, friction, choice architecture, AI surfaces) |
+| **Build / Review** | [`pm-persona-stress-tester`](skills/pm-persona-stress-tester/SKILL.md) | You have a design or flow and want it walked through step-by-step from a specific persona's point of view — what they see, think, expect, and where they bounce. 10-minute usability audit before scheduling real user research |
+| **Launch** | [`pm-launch-reviewer`](skills/pm-launch-reviewer/SKILL.md) | You have a launch coming up and want a gate-by-gate pre-flight against a real readiness bar |
+| **Measure** | [`pm-north-star-selector`](skills/pm-north-star-selector/SKILL.md) | You're picking *one* North Star and weighing simple behavioral (MAU/DAU) vs. value-delivered vs. revenue. Forces the explainability, lead/lag, gameability comparison most teams skip |
+| **Measure** | [`pm-metrics-critic`](skills/pm-metrics-critic/SKILL.md) | You're locking success criteria, debating a North Star, or staring at a dashboard that "looks fine" |
+| **Measure / Grow** | [`pm-funnel-critic`](skills/pm-funnel-critic/SKILL.md) | You have an activation funnel, conversion funnel, paywall, or trial design and want the funnel-layer logic pressure-tested (binding stage, drop-off driver, model fit) |
+| **Review** | [`pm-progress-auditor`](skills/pm-progress-auditor/SKILL.md) | You're about to send a status update, exec review, board email, or dashboard callout and want every claim pressure-tested for credibility leaks (overstated verbs, cherry-picked windows, vanity-metric-as-validation, "on track" with no threshold) |
+| **Review** | [`pm-evaluator`](skills/pm-evaluator/SKILL.md) | You want a strategy memo, PRD, or analysis graded against the five-criterion rubric before it goes up |
+| **Challenge** | [`pm-red-team`](skills/pm-red-team/SKILL.md) | You have an existing critique (from another skill, an external AI, or yourself) and want it adversarially re-reviewed before you act on it |
+| **Operate** | [`pm-context-loader`](skills/pm-context-loader/SKILL.md) | You're starting a PM workflow and need the agent to load your `pm-state/` (personal style, active projects, stakeholders) before doing anything else. Most operate-stage skills chain to this first. |
+| **Operate** | [`pm-morning-brief`](skills/pm-morning-brief/SKILL.md) | First thing in the morning. Pulls calendar, inbox, project todos, and yesterday's transcripts; surfaces the top 3 today plus slipped commitments. Writes to `pm-state/inbox/` |
+| **Operate** | [`pm-meeting-prep`](skills/pm-meeting-prep/SKILL.md) | Before a meeting that matters. Pulls attendees, prior transcripts, project state, stakeholder context; drafts a one-page brief including the question you don't want asked |
+| **Operate** | [`pm-meeting-debrief`](skills/pm-meeting-debrief/SKILL.md) | Right after a meeting. Extracts commitments and decisions from a Granola transcript, drafts follow-ups, proposes writes to project todos and decisions files |
+| **Operate** | [`pm-inbox-triage`](skills/pm-inbox-triage/SKILL.md) | When the inbox is backed up. Classifies threads, drafts replies for the substantive ones, surfaces stale threads where you're awaiting or being awaited |
+| **Operate** | [`pm-weekly-review`](skills/pm-weekly-review/SKILL.md) | Friday afternoon. What got done, what slipped, what's hanging, what to renegotiate. Catches the patterns the daily brief misses |
+| **Operate** | [`pm-stakeholder-tracker`](skills/pm-stakeholder-tracker/SKILL.md) | Weekly or before any high-stakes push. Who's going cold, who has open commitments hanging, who needs proactive attention |
 
 To use them locally, drop the repo in a directory Claude Code can see — the skills will appear automatically. New skills follow the format in [`SKILL.md.tmpl`](SKILL.md.tmpl).
 

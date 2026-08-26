@@ -2,6 +2,20 @@
 
 Notable additions to this repo, newest first. Loosely follows the [Keep a Changelog](https://keepachangelog.com) format.
 
+## 2026-08-26
+
+### Changed
+
+- **Packaged the repo as an installable Claude Code plugin.** `/plugin marketplace add kalyvask/pm-evaluation-framework` then `/plugin install pm-framework` now installs all twenty-three skills plus the frameworks, rubrics, and templates they cite. Same distribution model as [winning-writing](https://github.com/kalyvask/winning-writing).
+- **`.claude/skills/` → `skills/`** — the location Claude Code scans for plugin skills. Copy-install instructions in the README change from `cp -r .claude/skills/*` to `cp -r skills/*`.
+- **Skill citations now use `${CLAUDE_PLUGIN_ROOT}/`** (e.g. `${CLAUDE_PLUGIN_ROOT}/rubrics/pm-evaluation-rubric.md`). Bare repo-relative paths only resolved when the user happened to be sitting inside a clone; the plugin-root prefix resolves wherever the plugin is installed.
+
+### Added
+
+- **`.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`** — plugin manifest (`pm-framework`, v1.0.0) and the single-plugin marketplace served from this repo.
+- **`.github/workflows/plugin-validate.yml`** — CI runs `claude plugin validate . --strict` and fails the build if any `${CLAUDE_PLUGIN_ROOT}/...` citation in a skill points at a file that does not ship.
+- **`CONTRIBUTING.md`** — "Working on the skills locally" section: `claude --plugin-dir .` for live iteration, the citation convention, and the version-bump rule for shipping skill updates.
+
 ## 2026-08-13
 
 ### Added
