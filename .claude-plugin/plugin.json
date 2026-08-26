@@ -1,0 +1,12 @@
+{
+  "name": "pm-framework",
+  "description": "23 product-management skills for the artifacts that go up the chain: PRDs, strategy memos, launch criteria, metrics dashboards, kill/continue calls, customer-discovery interviews. Every critique skill chains into an adversarial second pass. Backed by a lifecycle-phase framework library, three rubrics, and five artifact templates.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alexandros Kalyvas"
+  },
+  "homepage": "https://github.com/kalyvask/pm-evaluation-framework",
+  "repository": "https://github.com/kalyvask/pm-evaluation-framework",
+  "license": "MIT",
+  "keywords": ["product-management", "prd", "metrics", "customer-discovery", "prioritization", "product-market-fit", "launch"]
+}

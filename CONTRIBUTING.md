@@ -33,6 +33,15 @@ Pull requests are welcome. The repo's bias is toward content that helps a *worki
 - Open a PR with the addition or change. Reference the file structure and explain the overlap check against existing content.
 - If you're not sure whether it fits, open an [issue](https://github.com/kalyvask/pm-evaluation-framework/issues/new/choose) first with the *Framework or doc suggestion* template.
 
+## Working on the skills locally
+
+The skills live in [`skills/`](skills/) and ship as the `pm-framework` plugin declared in [`.claude-plugin/`](.claude-plugin/).
+
+- **Load your working copy** without installing anything: `claude --plugin-dir .` from the repo root, then `/reload-plugins` after each edit.
+- **Reference repo docs with `${CLAUDE_PLUGIN_ROOT}`**, e.g. `` `${CLAUDE_PLUGIN_ROOT}/frameworks/00-overview.md` ``. Claude Code substitutes the plugin's install directory, so citations resolve for people who installed the plugin rather than cloned the repo. A bare `frameworks/...` path only resolves when the user happens to be sitting in a clone.
+- **Validate the manifests** before opening a PR: `claude plugin validate . --strict`. CI runs the same check.
+- **Bump `version`** in both `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` when skill content changes — installed users only pick up updates on a version bump.
+
 ## How to give feedback on a skill
 
 If you've invoked one of the Claude Code skills on a real PM artifact and have specific observations on what it did well or missed, open an issue with the *Skill feedback* template. Concrete examples (sanitized) are the highest-signal contributions to the skill library.

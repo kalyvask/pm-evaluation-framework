@@ -1,0 +1,55 @@
+name: plugin-validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.claude-plugin/**'
+      - 'skills/**'
+      - '.github/workflows/plugin-validate.yml'
+  pull_request:
+    paths:
+      - '.claude-plugin/**'
+      - 'skills/**'
+      - '.github/workflows/plugin-validate.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      # Manifest + structure check. No API key needed.
+      - name: Validate plugin and marketplace manifests
+        run: claude plugin validate . --strict
+
+      # Every ${CLAUDE_PLUGIN_ROOT}/... citation in a skill must point at a file
+      # that actually ships with the plugin, or the skill dangles once installed.
+      - name: Check skill citations resolve
+        run: |
+          citations=$(grep -oh '\${CLAUDE_PLUGIN_ROOT}/[A-Za-z0-9._/-]*\.md' skills/*/SKILL.md | sed 's|${CLAUDE_PLUGIN_ROOT}/||' | sort -u)
+          if [ -z "$citations" ]; then
+            echo "No \${CLAUDE_PLUGIN_ROOT} citations found in skills/ — the rewrite convention has regressed."
+            exit 1
+          fi
+          missing=0
+          for f in $(grep -oh '\${CLAUDE_PLUGIN_ROOT}/[A-Za-z0-9._/-]*\.md' skills/*/SKILL.md | sed 's|${CLAUDE_PLUGIN_ROOT}/||' | sort -u); do
+            if [ ! -f "$f" ]; then
+              echo "MISSING: $f"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "One or more skill citations point at files that do not exist."
+            exit 1
+          fi
+          echo "All skill citations resolve."
