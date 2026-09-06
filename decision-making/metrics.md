@@ -121,6 +121,10 @@ The "very disappointed" % is a directional PMF signal. ~40% is a commonly cited 
 
 Most useful follow-up: *"What would you use as a replacement?"* The answers reveal the actual competitive set.
 
+**The number is the least valuable output.** Treat the survey as a segmenter, not a score: what you want is the three name lists (very / somewhat / not disappointed), so you can go look at what each band does in the product and who they are. "We're at 31%" is a fact you can't act on. "Our 31% are all ops leads who came in through the API, and they use the shared workspace at six times the rate of everyone else" is a roadmap. The banding mechanic — including the three cuts of feature data (what both engaged bands share, what separates the lovers from the middle, what only the disinterested touch) that make the name lists actionable — is in `frameworks/03-pre-pmf-validation.md` § "Lovers, likers, and the disinterested."
+
+The same applies to NPS, CSAT, and any other intensity survey: report the distribution and the band composition, never the mean alone. An average collapses exactly the information you were trying to collect.
+
 ---
 
 ## LTV / CAC

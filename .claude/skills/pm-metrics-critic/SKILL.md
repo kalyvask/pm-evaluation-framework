@@ -28,6 +28,8 @@ Don't use this when:
 
 3. **Run the segment-level decomposition.** Aggregate metrics hide segment failures. If the strategy assumption is segment-specific ("top creators will adopt"), the metric must be segment-specific. Top-line DAU does not validate a top-creator assumption.
 
+   The intensity version of the same check: for any love or satisfaction metric (Sean Ellis, NPS, CSAT), a reported mean has thrown away the data. Ask for the distribution and the band composition — who loves it, who kind of likes it, who isn't interested — what the two engaged bands have in common, and what separates them. "We're at 31% very disappointed" is not actionable; "our 31% are all ops leads who use the shared workspace at 6× the rate of everyone else" is. See `decision-making/metrics.md` § "Sean Ellis test" and `frameworks/03-pre-pmf-validation.md` § "Lovers, likers, and the disinterested."
+
 4. **Run the standalone-vs-counterweight check.** From `decision-making/metrics.md` § counter-metrics: every primary metric should have a counter-metric that catches the obvious gaming path. Engagement up + retention down is a different story than engagement up + retention flat. Flag any metric that ships without a counter.
 
 5. **Run the leading-vs-lagging check.** A success criterion of "ARR by Q4" tells you nothing in weeks 1–8. Identify the leading indicator that would predict the lagging metric *early enough to act on it*.

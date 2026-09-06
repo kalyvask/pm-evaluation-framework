@@ -85,6 +85,25 @@ Four reasons to almost never restart:
 
 The vocabulary matters. *Pivot* succeeds often. *Restart* almost never succeeds. Famous restarts that worked (Instagram from Burbn, Slack from Glitch) are outliers. Most restarts fail because the team has already burned cash and learning cycles getting to the moment of restart and now has to start over with less of both.
 
+### Iterate toward the lovers and the middle, not the disinterested
+
+Once anything is live, "iterate on the who" has a concrete direction, and it is not the direction most teams take. The instinct is to chase the people who aren't interested: read the churn survey, catalogue the objections from lost deals, build the missing features, win them back. That is the same mistake as adding features to make a needy audience desperate, run at the level of the existing user base.
+
+The right move points the other way. **Partition the users you already have by intensity, and work on the two bands that are already engaged — the ones who love it and the ones who kind of like it — starting from what they have in common.**
+
+Each band gives you something different:
+
+- **The lovers define the target.** The commonality among users who would be genuinely upset to lose the product is the most precise available statement of who the desperate segment actually is — more precise than the one in your value hypothesis, because it's derived from behavior rather than from a bet.
+- **The likers are the nearest growth.** They already chose to stay and they already use most of what the lovers use. The gap between the two bands is a short, concrete list of behaviors, and closing it converts people who are halfway there rather than convincing people who left.
+- **What both bands share is the product.** The features heavily used by lovers *and* likers are the shared core — the thing that made anyone stay at all. It rarely looks like a differentiator, so it's chronically under-funded, and letting it rot costs you the middle before you can convert it.
+
+The mechanic — behavioral banding, the three-axis commonality, and the three cuts of feature data (shared core, separators, disinterested-only) — is in [`../frameworks/03-pre-pmf-validation.md`](../frameworks/03-pre-pmf-validation.md) § "Lovers, likers, and the disinterested." The roadmap consequences are in [`prioritization.md`](prioritization.md) § "Route requests by band before scoring them."
+
+Two things this reframes:
+
+- **A failed experiment with a small band of lovers inside it is not a failure.** It's a mistargeted launch. The pivot is to re-aim at that band and the likers adjacent to it, not to change the product.
+- **The lovers' commonality is often the pivot destination.** When the analysis names a segment you didn't target, you're in the savor-the-surprise case below, and the answer is to follow the lovers.
+
 ### The exception: savor the surprise
 
 The one explicit exception, from Scott Cook's work at Intuit. When an experiment produces an **unexpected positive signal** (users using the product for something you didn't design it for, a feature you considered minor getting outsized adoption, a segment you didn't target loving it), drop everything and double down on the surprise. Even if it means changing the what.

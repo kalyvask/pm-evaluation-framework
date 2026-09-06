@@ -188,6 +188,26 @@ When you find one, do not let them go. They are how PMF starts.
 
 ---
 
+## Interview the people who stayed, not only the ones who left
+
+Once the product is live, most teams' qualitative research budget goes to the wrong population. Exit interviews, churn surveys, and lost-deal debriefs all sample users who already decided the product isn't for them — by construction. That research is worth doing, but it answers a narrow question ("why did this person leave?") and teams routinely mistake it for the broad one ("what should we build?").
+
+The complementary round, and the one that's usually missing: a **"why do you stay" study** across *both* engaged bands — the users who'd be genuinely upset to lose the product, and the ones who'd merely shrug but keep using it. Run it at the same cadence as the churn study. Two bands, two different questions:
+
+- **With the lovers**, you're after what makes it indispensable: the segment definition, the core workflow, the language they use to describe it.
+- **With the likers**, you're after what's holding them at "kind of like it": which part of the lovers' workflow they've never tried, where they stopped, what they do outside the product that they could be doing inside it. This is the highest-yield conversation most teams never schedule.
+
+What you're after is not compliments — the Mom Test rules apply here exactly as they do everywhere else, and "I love it" is still zero data. You're after:
+
+- **The prior state.** *"Walk me through what you did before this existed. What was the last week like?"* The replaced workaround is the sharpest segment definition you'll get, and it's a past-behavior question, so it produces facts.
+- **The substitution test.** *"If this disappeared tomorrow, what would you actually do on Monday?"* A user who names a specific painful fallback is a lover. A user who names an easy substitute is a liker with a habit, whatever they said about loving it.
+- **The referral history.** *"Who have you told about this? What did you say?"* Past referrals are behavior; willingness to refer is fluff. The language they used is also your positioning copy, written by the person you're trying to reach.
+- **The main benefit, in their words.** One sentence, unprompted. Collected across both bands, this is the clearest read on where the two overlap and where they diverge — the shared core and the separators in `frameworks/03-pre-pmf-validation.md` § "Lovers, likers, and the disinterested."
+
+Two recruiting disciplines carry over from the rest of this file. **Non-friends only** — enthusiasm from someone with a relationship stake in your feelings is the compliment problem with extra steps. And **run both bands in the same round**: a commonality among lovers means nothing until you know whether the likers share it. Where they overlap is the shared core; where they diverge is the conversion path.
+
+---
+
 ## Decision checklist before any interview round
 
 1. **What are the three things I want to learn?** Written down, not in my head.
@@ -238,3 +258,4 @@ The dual failure mode is recruiting only people who already think like you. Frie
 - **Researching only the convenient segment.** If your strategy depends on enterprise buyers and you only interview prosumers, you're collecting beautiful data about the wrong people. (See `decision-making/research-methods.md`, "the right segment trap.")
 - **Ending without a commitment ask.** Even informal chats can end with *"who else should I talk to?"* — that's an advancement currency.
 - **Treating one good interview as PMF signal.** PMF is a cohort question. One desperate user is the start; ten are the bar (`frameworks/03-pre-pmf-validation.md`).
+- **Researching only the users who left.** Churn interviews sample the population that already opted out. Pair every churn round with a "why do you stay" round across both engaged bands — the lovers and the middle — or the roadmap ends up built entirely from the objections of people who were never going to be customers.

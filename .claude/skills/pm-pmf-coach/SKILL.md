@@ -5,7 +5,7 @@ description: Walk a founder or early-stage PM through finding product-market fit
 
 # PM PMF coach
 
-Walks a founder or early-stage PM through the discipline of finding product-market fit on a specific bet. Different from `pm-value-hypothesis-tester` (which pressure-tests one hypothesis statically); this skill runs the iterative loop: leap of faith → value hypothesis → experiment design → interpretation → pivot decision → distractions check.
+Walks a founder or early-stage PM through the discipline of finding product-market fit on a specific bet. Different from `pm-value-hypothesis-tester` (which pressure-tests one hypothesis statically); this skill runs the iterative loop: leap of faith → value hypothesis → experiment design → interpretation → who loves it and who kind of likes it → pivot decision → distractions check.
 
 Anchored in `decision-making/finding-pmf.md` (posture) and `decision-making/value-hypothesis.md` (mechanics).
 
@@ -81,7 +81,35 @@ After the experiment, the user comes back with one of three outcomes:
 - **Surprise.** Customers behave differently than predicted: worse on the predicted dimension, but unexpectedly *better* on a different dimension. A segment you didn't target loves it. A feature you considered minor gets outsized adoption. A use case you didn't design for becomes the use case.
   - *Next step:* drop the original hypothesis. Savor the surprise (Cook). Build the next experiment on the new signal. Most successful tech companies pivoted (sometimes restarted) on a surprise.
 
-### 5. Decide: pivot the who, pivot the how, or restart the what
+### 5. If anything is live, band the users and work the two engaged bands
+
+Skip this step only if there are no users yet. Whenever there is live usage — even a ten-person beta — the pivot decision in step 6 should be informed by the users you already have, not just by the experiment's headline result.
+
+Partition them into three bands, behaviorally first and by survey second:
+
+- **Lovers** — retained, deep usage, return unprompted, refer others, would be genuinely upset to lose it
+- **Likers** — retained but shallow, substitutable, use it when reminded. They kind of like it
+- **Disinterested** — tried and stopped, or use it under duress
+
+The roadmap serves the first two. The third is the one band you deliberately stop building for.
+
+Then run the commonality analysis on both engaged bands, on three axes: who they are, what they were doing before (the replaced workaround — the most predictive axis), and what they do in the product. On the third axis, ask for three cuts rather than a ranked feature list:
+
+- **What lovers and likers both use heavily** — the shared core. This is what the product actually is, and it's the lane teams under-fund because it doesn't look like a differentiator.
+- **What lovers do that likers don't** — the separators. This is simultaneously the depth investment and the best available hypothesis for moving the middle up, because it names the concrete behavioral gap between liking and loving.
+- **What only the disinterested touch** — de-investment candidates.
+
+Push back on three things specifically:
+
+- **A commonality with no contrast.** "What do the lovers share?" is meaningless without "and do the likers not share it?" Any three users have something in common.
+- **A roadmap built from churn.** If the user's next-step list came from exit surveys, lost deals, or support tickets, name it. Those channels sample only the people who already opted out.
+- **Writing the middle off.** The opposite error, and just as common once a team discovers the lover band. Likers already chose to stay; they are the cheapest conversion population available, and the separator gap tells you exactly what to fix for them.
+
+Reference `frameworks/03-pre-pmf-validation.md` § "Lovers, likers, and the disinterested" for the full mechanic, and `decision-making/finding-pmf.md` § "Iterate toward the lovers and the middle" for why this is the direction of the pivot.
+
+If the lover commonality names a segment the user did not target, route to the savor-the-surprise branch in step 4 — the surprise has already happened, and the pivot destination is sitting in the data.
+
+### 6. Decide: pivot the who, pivot the how, or restart the what
 
 Most experiments produce "leap of faith falsified." The decision tree, in order of probability and success rate:
 
@@ -91,7 +119,7 @@ Most experiments produce "leap of faith falsified." The decision tree, in order 
 
 The vocabulary discipline matters because the moves require different organizational responses. A pivot keeps the team, keeps the insight, swaps the segment or model. A restart is closer to founding a new company inside the old one.
 
-### 6. Run the distractions check
+### 7. Run the distractions check
 
 Before the user closes the loop, run the distractions check. Ask: *are you spending pre-PMF time on any of the following?*
 
@@ -123,6 +151,9 @@ If yes to any, surface the cost. Each item is pre-PMF time spent on post-PMF wor
 ## Interpretation (if the user is post-experiment)
 [Validated / falsified / surprised. The five-whys output if falsified. The unexpected signal if surprised.]
 
+## Who loves it, who kind of likes it (if there are live users)
+[The three bands with counts. What the two engaged bands share on all three axes: who they are, what they were doing before, what they do in the product. The three feature cuts: shared core, separators (lover-only behavior), disinterested-only. What's holding the likers at "kind of like it" and the specific intervention to move them up. Which band the user's current roadmap is actually serving.]
+
 ## Recommended next move
 [Pivot the who / pivot the how / restart the what / double down on the surprise. With specific reasoning. Specific named segment or model change if pivoting.]
 
@@ -151,6 +182,9 @@ If yes to any, surface the cost. Each item is pre-PMF time spent on post-PMF wor
 - **Treating "savor the surprise" as the default response to any signal.** It's the exception, not the rule. The surprise has to be specifically positive on a *different* dimension than the original hypothesis, and behaviorally observable (a segment buying, a feature being used heavily). Vague "good feedback" is not a surprise to savor.
 - **Restarting too easily.** Restarts have a much lower success rate than pivots. If the five-whys can point to a pivot of the who, run the pivot. Reserve restarts for the case where the insight itself is wrong.
 - **Treating need as a signal.** A customer who says "this would be useful" is not desperate. Push the user past attitudinal signals to behavioral ones (the four desperation signals).
+- **Building the roadmap from the people who aren't interested.** Churn surveys, lost-deal reports, and support tickets all sample the disengaged by construction. If the user's next steps came from those channels, name it and redirect to what the two engaged bands have in common.
+- **Treating the middle as a lost cause.** The mirror-image error. Likers are the conversion population, not noise; the separator gap is the specific thing to fix for them.
+- **Reporting the lovers' top features by volume.** Volume finds table stakes (login, search, home). The three cuts — shared core, separators, disinterested-only — find the structure. Push back on any feature list produced without the liker band as contrast.
 
 ## Chain with pm-value-hypothesis-tester and pm-red-team
 

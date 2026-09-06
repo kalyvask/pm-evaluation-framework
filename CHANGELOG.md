@@ -2,6 +2,18 @@
 
 Notable additions to this repo, newest first. Loosely follows the [Keep a Changelog](https://keepachangelog.com) format.
 
+## 2026-09-05
+
+### Added
+
+- **`frameworks/03-pre-pmf-validation.md`** — new "Lovers, likers, and the disinterested" section. Partition users by intensity, then build for the two bands that are already engaged — the ones who love the product and the ones who kind of like it — around what they have in common. Covers the three-band table, behavioral banding, the three-axis commonality (who they are, what they did before, what they do in the product), and three cuts of the feature data: the **shared core** (what both engaged bands use, chronically under-funded because it doesn't look like a differentiator), the **separators** (what lovers do that likers don't — simultaneously the depth investment and the conversion hypothesis for moving the middle up), and disinterested-only features as de-investment candidates. Plus "Pulling the middle up," seven traps, and the re-aiming decision when the lovers turn out to be a segment you never targeted. The "10 Happy Users" rule, the Sean Ellis section, the smile curve, and the phase's closing questions were extended to connect to it.
+- **`decision-making/prioritization.md`** — new "Route requests by band before scoring them" section. Four roadmap lanes (hold the shared core / deepen the love / pull the middle up / explicitly not serving), plus a table of the six structural forces that pull the roadmap toward the users who never engaged, each with a counter-move.
+- **`decision-making/finding-pmf.md`** — new "Iterate toward the lovers and the middle, not the disinterested" subsection under "Iterate on the who," giving the pivot a concrete direction once anything is live: the lovers define the target, the likers are the nearest growth, and what both share is the product.
+- **`decision-making/customer-interviews.md`** — new "Interview the people who stayed, not only the ones who left" section: the "why do you stay" round run across both engaged bands, with different questions for each (what makes it indispensable vs. what's holding them at "kind of like it"), the substitution test, and referral history. Plus a matching anti-pattern.
+- **`decision-making/metrics.md`** — Sean Ellis section extended: treat the survey as a segmenter, not a score. The three name lists are the deliverable; the percentage is not actionable. Applies to NPS and CSAT equally.
+- **`.claude/skills/pm-pmf-coach/SKILL.md`** — new step 5, "If anything is live, band the users and work the two engaged bands," with a matching output section and three new anti-patterns (roadmapping from churn, writing the middle off, ranking features by volume instead of by the three cuts).
+- **`.claude/skills/pm-metrics-critic/SKILL.md`** — segment-decomposition step extended with the intensity check: a reported mean on any love metric has thrown away the data.
+
 ## 2026-08-13
 
 ### Added

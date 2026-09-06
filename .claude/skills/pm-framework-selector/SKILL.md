@@ -27,6 +27,7 @@ This skill helps a PM (or someone helping a PM) pick the right framework for the
 | End-to-end thin-slice scoping | Defining the MVP | Story Mapping |
 | Whether the underlying value-hypothesis bet (what / who / how) holds together | Pre-PMF Validation | Rachleff value hypothesis, Christensen disruption, bowling-pin / chasm — see `decision-making/value-hypothesis.md` |
 | Whether we have PMF | Pre-PMF Validation | "10 Happy Users", Sean Ellis Test, Smile Curve, ARC |
+| Which users should drive the roadmap — the ones who love it, the ones who kind of like it, or the ones who aren't interested | Pre-PMF Validation | Lovers / likers / disinterested banding, three-axis commonality, the shared-core and separator cuts — see `frameworks/03-pre-pmf-validation.md` |
 | Activation / TTV health | Pre-PMF Validation | Activation Rate / TTV |
 | Whether GTM is actually ready | Pre-PMF Validation | GTM Strategy Checklist |
 | How to actually run a customer-discovery interview without collecting false positives | Strategy & Discovery / Pre-PMF | Mom Test rules — see `decision-making/customer-interviews.md` |
@@ -52,6 +53,7 @@ For decisions that don't fit a phase cleanly (problem framing, research methods,
 | I have an existing critique or recommendation and want it adversarially re-reviewed | Use the `pm-red-team` skill — applies a different lens than the first pass and is built to challenge rather than defer |
 | One-way vs. two-way doors, pre-mortem | `decision-making/risk-and-reversibility.md` |
 | Backlog prioritization | `decision-making/prioritization.md` |
+| Our backlog is built from churn feedback and lost deals — is that right? | `decision-making/prioritization.md` § "Route requests by band before scoring them" |
 | What to measure | `decision-making/metrics.md` |
 | PM/engineering tension | `cross-functional/engineering-partnership.md` |
 | Project failure / kill / postmortem | `cross-functional/failure-management.md` |

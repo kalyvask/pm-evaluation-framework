@@ -155,6 +155,45 @@ The discipline is hardest when it's politically costly — when the bets being d
 
 ---
 
+## Route requests by band before scoring them
+
+Every framework on this page — RICE, WSJF, Opportunity Scoring, MoSCoW — takes request volume as an input. Raw request volume systematically over-weights the users least interested in the product, because there are more of them and they complain more precisely. Before anything gets scored, sort the requesters into the three bands from `frameworks/03-pre-pmf-validation.md` § "Lovers, likers, and the disinterested" — the users who love it, the ones who kind of like it, and the ones who aren't interested — and route each request into one of four lanes.
+
+The roadmap serves the first two bands. Three of the lanes are ways of doing that; the fourth is the explicit exclusion.
+
+| Lane | Who it serves | What it is | Rough capacity |
+|---|---|---|---|
+| **Hold the shared core** | Both engaged bands | The features lovers and likers both use heavily. Reliability, speed, and quality on the thing that made anyone stay | Steady and non-negotiable. Chronically under-funded because it doesn't look like a differentiator |
+| **Deepen the love** | The lover band | Depth and expansion on the separators — what lovers do that likers don't | The largest discretionary lane. Also the source of the next conversion hypothesis |
+| **Pull the middle up** | The liker band | Remove what's holding likers at "kind of like it": the friction on the separator behavior, and the blocked-benefit requests | Second-largest. Highest yield per unit of work, because these users already chose to stay |
+| **Not serving** | The disinterested | Explicitly declined, in writing, with the reason | Zero |
+
+Four consequences worth being deliberate about:
+
+- **The shared core is the lane that gets raided.** It has no champion — it isn't new, it isn't a differentiator, and nobody demos it. Letting it degrade loses likers before you ever convert them, and eventually costs you lovers too.
+- **The separators are a conversion asset, not just a loyalty asset.** What lovers do and likers don't is the most specific description you have of the gap between the two bands, which makes it the best available hypothesis for moving the middle up. Depth work and conversion work are often the same work viewed from different ends.
+- **Weigh the different-benefit request rather than reflexively taking or refusing it.** A liker asking for a faster version of the core workflow is straightforwardly high-yield. A liker asking for an adjacent capability ("could it also do invoicing?") might be a real surprise worth savoring — but a roadmap built mostly from those drifts toward the average of everyone's requests and stops fitting anyone in particular. The test is whether the request keeps the shared core load-bearing or routes around it.
+- **"Not serving" has to be written down.** An unstated no is a yes with a delay — it comes back through escalation three weeks later with an exec attached. Give each declined request the same one-sentence named reason that deferred items get in Step 4 below.
+
+Two people advocating the same feature for different bands are having a strategy argument, not a prioritization argument. Sort the bands first or the meeting will not converge.
+
+### Why the disinterested capture the roadmap anyway
+
+The pull toward the middle is structural, not a failure of individual judgment. Each force has a specific counter-move.
+
+| Force | Why it pulls to the middle | Counter-move |
+|---|---|---|
+| Churn surveys | Sample only the people who left — by construction, the disengaged | Run a "why do you stay" study across both engaged bands at the same cadence |
+| Lost-deal reports | Losses get documented and reviewed; wins are silent | Debrief wins with equal rigor. The won-deal reasons are the lover signature |
+| Support tickets | Skew toward the confused and the blocked | Weight tickets by band before reading volume as priority |
+| Escalation paths | The loudest customer is rarely the most loving one | Ask which band the escalating account is in before committing capacity |
+| Exec anecdote | A single disengaged user with organizational power | Answer with the banding, not with a counter-anecdote |
+| Growth targets | The unengaged band is the biggest addressable population on paper | Grow by converting likers, who are already halfway there, before chasing users who left |
+
+Note what this table is and isn't arguing. The failure mode is building for people who aren't interested — not building for the middle. The likers are a target; they're simply a target you approach through the shared core and the separators rather than by taking every request at face value.
+
+---
+
 ## Ranking rare-but-strategic against frequent-but-tactical
 
 Frameworks like RICE systematically under-weight strategic bets, because:
@@ -238,5 +277,6 @@ Before locking in a quarterly roadmap:
 3. Are kill criteria defined for each major bet?
 4. Have we sanity-checked the framework's output against qualitative judgment?
 5. Is there a strategic-capacity carve-out, separate from the scored backlog?
+6. Do we know which band each top-5 item serves — the users who love the product, the ones who kind of like it, or the ones who aren't interested? Is anything in the top 5 serving the third, and is anything holding the shared core the first two depend on?
 
 If two of these are missing, the prioritization layer is broken regardless of how the deck reads.
